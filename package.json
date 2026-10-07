@@ -38,5 +38,9 @@
     "postcss-nested": "^6.2.0",
     "postcss-selector-parser": "^6.1.2",
     "sucrase": "^3.35.1"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "prisma": "^6.19.3"
   }
 }

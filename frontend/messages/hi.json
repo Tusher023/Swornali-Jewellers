@@ -1,0 +1,61 @@
+{
+  "Navigation": {
+    "home": "होम",
+    "products": "उत्पाद",
+    "customJewelry": "कस्टम ज्वेलरी",
+    "about": "हमारे बारे में",
+    "contact": "संपर्क करें",
+    "wishlist": "विशलिस्ट",
+    "cart": "कार्ट",
+    "account": "मेरा अकाउंट",
+    "shipping": "शिपिंग"
+  },
+  "Common": {
+    "addToCart": "कार्ट में जोड़ें",
+    "buyNow": "अभी खरीदें",
+    "checkout": "चेकआउट",
+    "continueShopping": "खरीदारी जारी रखें",
+    "remove": "हटाएं",
+    "save": "सहेजें",
+    "cancel": "रद्द करें",
+    "search": "खोजें",
+    "loading": "लोड हो रहा है...",
+    "quantity": "मात्रा",
+    "price": "कीमत",
+    "total": "कुल",
+    "subtotal": "उप-योग",
+    "language": "भाषा",
+    "selectLanguage": "भाषा चुनें"
+  },
+  "Language": {
+    "english": "English",
+    "bengali": "বাংলা",
+    "hindi": "हिन्दी",
+    "odia": "ଓଡ଼ିଆ"
+  },
+  "Home": {
+    "title": "शाश्वत सुंदरता",
+    "subtitle": "प्यार और परंपरा से बनाए गए आभूषण खोजें।",
+    "shopNow": "अभी खरीदें",
+    "featured": "विशेष संग्रह"
+  },
+  "Product": {
+    "details": "उत्पाद विवरण",
+    "selectSize": "आकार चुनें",
+    "inStock": "स्टॉक में",
+    "outOfStock": "स्टॉक में नहीं",
+    "addedToCart": "आपके बैग में जोड़ा गया"
+  },
+  "Cart": {
+    "title": "आपका शॉपिंग बैग",
+    "empty": "आपका बैग खाली है",
+    "emptyMessage": "कुछ सुंदर खोजें और उसे अपने बैग में जोड़ें।",
+    "proceedCheckout": "चेकआउट पर जाएं"
+  },
+  "Account": {
+    "title": "मेरा अकाउंट",
+    "login": "लॉगिन",
+    "register": "रजिस्टर",
+    "logout": "लॉगआउट"
+  }
+}

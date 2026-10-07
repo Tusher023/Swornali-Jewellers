@@ -1,12 +1,28 @@
-import { Controller, Get, Post, Patch, Delete, Body, Param, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Patch,
+  Delete,
+  Body,
+  Param,
+  UseGuards,
+} from '@nestjs/common';
+
 import { CartService } from './cart.service';
 import { JwtAuthGuard } from '../auth/jwt.guard';
 import { CurrentUser } from '../auth/decorators';
-import { IsString, IsNumber, IsOptional, Min } from 'class-validator';
+
+import {
+  IsString,
+  IsNumber,
+  IsOptional,
+  Min,
+} from 'class-validator';
 
 class AddItemDto {
   @IsString()
-  productId: string;
+  productId!: string;
 
   @IsString()
   @IsOptional()
@@ -19,11 +35,12 @@ class AddItemDto {
 
 class UpdateItemDto {
   @IsNumber()
-  quantity: number;
+  @Min(1)
+  quantity!: number;
 }
 
 @UseGuards(JwtAuthGuard)
-@Controller('api/cart')
+@Controller('cart')
 export class CartController {
   constructor(private readonly cartService: CartService) {}
 
@@ -33,18 +50,40 @@ export class CartController {
   }
 
   @Post('items')
-  addItem(@CurrentUser() user: any, @Body() body: AddItemDto) {
-    return this.cartService.addItem(user.userId, body.productId, body.variantId, body.quantity);
+  addItem(
+    @CurrentUser() user: any,
+    @Body() body: AddItemDto,
+  ) {
+    return this.cartService.addItem(
+      user.userId,
+      body.productId,
+      body.variantId,
+      body.quantity,
+    );
   }
 
   @Patch('items/:id')
-  updateItemQuantity(@CurrentUser() user: any, @Param('id') id: string, @Body() body: UpdateItemDto) {
-    return this.cartService.updateItemQuantity(user.userId, id, body.quantity);
+  updateItemQuantity(
+    @CurrentUser() user: any,
+    @Param('id') id: string,
+    @Body() body: UpdateItemDto,
+  ) {
+    return this.cartService.updateItemQuantity(
+      user.userId,
+      id,
+      body.quantity,
+    );
   }
 
   @Delete('items/:id')
-  removeItem(@CurrentUser() user: any, @Param('id') id: string) {
-    return this.cartService.removeItem(user.userId, id);
+  removeItem(
+    @CurrentUser() user: any,
+    @Param('id') id: string,
+  ) {
+    return this.cartService.removeItem(
+      user.userId,
+      id,
+    );
   }
 
   @Delete()

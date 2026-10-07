@@ -1,23 +1,44 @@
-import { Controller, Get, Post, Patch, Body, Param, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Patch,
+  Body,
+  Param,
+  UseGuards,
+} from '@nestjs/common';
+import { IsOptional, IsString } from 'class-validator';
+
 import { OrderService } from './order.service';
 import { JwtAuthGuard } from '../auth/jwt.guard';
 import { CurrentUser } from '../auth/decorators';
-import { IsString, IsOptional } from 'class-validator';
 
 class PlaceOrderDto {
-  @IsString() addressId: string;
-  @IsString() paymentMethod: string;
-  @IsString() @IsOptional() couponCode?: string;
+  @IsString()
+  addressId!: string;
+
+  @IsString()
+  paymentMethod!: string;
+
+  @IsString()
+  @IsOptional()
+  couponCode?: string;
 }
 
 @UseGuards(JwtAuthGuard)
-@Controller('api/orders')
+@Controller('orders')
 export class OrderController {
   constructor(private readonly orderService: OrderService) {}
 
   @Post()
-  placeOrder(@CurrentUser() user: any, @Body() body: PlaceOrderDto) {
-    return this.orderService.placeOrder(user.userId, body);
+  placeOrder(
+    @CurrentUser() user: any,
+    @Body() body: PlaceOrderDto,
+  ) {
+    return this.orderService.placeOrder(
+      user.userId,
+      body,
+    );
   }
 
   @Get()
@@ -26,12 +47,24 @@ export class OrderController {
   }
 
   @Get(':id')
-  getOrder(@CurrentUser() user: any, @Param('id') id: string) {
-    return this.orderService.getOrder(user.userId, id);
+  getOrder(
+    @CurrentUser() user: any,
+    @Param('id') id: string,
+  ) {
+    return this.orderService.getOrder(
+      user.userId,
+      id,
+    );
   }
 
   @Patch(':id/cancel')
-  cancelOrder(@CurrentUser() user: any, @Param('id') id: string) {
-    return this.orderService.cancelOrder(user.userId, id);
+  cancelOrder(
+    @CurrentUser() user: any,
+    @Param('id') id: string,
+  ) {
+    return this.orderService.cancelOrder(
+      user.userId,
+      id,
+    );
   }
 }

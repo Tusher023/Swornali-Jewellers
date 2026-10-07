@@ -1,16 +1,25 @@
-import { Controller, Get, Post, Delete, Body, Param, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Delete,
+  Body,
+  Param,
+  UseGuards,
+} from '@nestjs/common';
+import { IsString } from 'class-validator';
+
 import { WishlistService } from './wishlist.service';
 import { JwtAuthGuard } from '../auth/jwt.guard';
 import { CurrentUser } from '../auth/decorators';
-import { IsString } from 'class-validator';
 
 class AddWishlistDto {
   @IsString()
-  productId: string;
+  productId!: string;
 }
 
 @UseGuards(JwtAuthGuard)
-@Controller('api/wishlist')
+@Controller('wishlist')
 export class WishlistController {
   constructor(private readonly wishlistService: WishlistService) {}
 
@@ -20,12 +29,24 @@ export class WishlistController {
   }
 
   @Post('items')
-  toggleItem(@CurrentUser() user: any, @Body() body: AddWishlistDto) {
-    return this.wishlistService.toggleItem(user.userId, body.productId);
+  toggleItem(
+    @CurrentUser() user: any,
+    @Body() body: AddWishlistDto,
+  ) {
+    return this.wishlistService.toggleItem(
+      user.userId,
+      body.productId,
+    );
   }
 
   @Delete('items/:productId')
-  removeItem(@CurrentUser() user: any, @Param('productId') productId: string) {
-    return this.wishlistService.removeItem(user.userId, productId);
+  removeItem(
+    @CurrentUser() user: any,
+    @Param('productId') productId: string,
+  ) {
+    return this.wishlistService.removeItem(
+      user.userId,
+      productId,
+    );
   }
 }

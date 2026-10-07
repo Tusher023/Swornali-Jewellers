@@ -1,0 +1,86 @@
+{
+  "Navigation": {
+    "home": "হোম",
+    "products": "সব গয়না",
+    "rings": "আংটি",
+    "necklaces": "হার",
+    "earrings": "কানের দুল",
+    "bracelets": "ব্রেসলেট",
+    "customJewelry": "কাস্টম জুয়েলারি",
+    "about": "আমাদের গল্প",
+    "contact": "যোগাযোগ",
+    "wishlist": "পছন্দের তালিকা",
+    "cart": "কার্ট",
+    "account": "আমার অ্যাকাউন্ট",
+    "shipping": "শিপিং",
+    "mainNavigation": "প্রধান নেভিগেশন",
+    "mobileNavigation": "মোবাইল নেভিগেশন"
+  },
+  "Common": {
+    "addToCart": "কার্টে যোগ করুন",
+    "buyNow": "এখনই কিনুন",
+    "checkout": "চেকআউট",
+    "continueShopping": "কেনাকাটা চালিয়ে যান",
+    "remove": "মুছে ফেলুন",
+    "save": "সংরক্ষণ করুন",
+    "cancel": "বাতিল",
+    "close": "বন্ধ করুন",
+    "search": "খুঁজুন",
+    "searchPlaceholder": "আংটি, হার, হীরা খুঁজুন...",
+    "loading": "লোড হচ্ছে...",
+    "quantity": "পরিমাণ",
+    "price": "মূল্য",
+    "total": "মোট",
+    "subtotal": "উপমোট",
+    "language": "ভাষা",
+    "selectLanguage": "ভাষা নির্বাচন করুন",
+    "menu": "মেনু",
+    "signIn": "সাইন ইন",
+    "deliveryAnnouncement": "বাংলাদেশের সর্বত্র সকল অর্ডারে বিনামূল্যে বীমাকৃত ডেলিভারি"
+  },
+  "Language": {
+    "english": "English",
+    "bengali": "বাংলা",
+    "hindi": "हिन्दी",
+    "odia": "ଓଡ଼ିଆ"
+  },
+  "Home": {
+    "title": "চিরন্তন সৌন্দর্য",
+    "subtitle": "ভালোবাসা ও ঐতিহ্যের ছোঁয়ায় তৈরি গয়না আবিষ্কার করুন।",
+    "shopNow": "এখনই কিনুন",
+    "featured": "বিশেষ সংগ্রহ"
+  },
+  "Product": {
+    "details": "পণ্যের বিবরণ",
+    "selectSize": "সাইজ নির্বাচন করুন",
+    "inStock": "স্টকে আছে",
+    "outOfStock": "স্টকে নেই",
+    "addedToCart": "আপনার ব্যাগে যোগ করা হয়েছে"
+  },
+  "Cart": {
+    "title": "আপনার শপিং ব্যাগ",
+    "empty": "আপনার ব্যাগ খালি",
+    "emptyMessage": "সুন্দর কিছু আবিষ্কার করুন এবং আপনার ব্যাগে যোগ করুন।",
+    "proceedCheckout": "চেকআউটে যান"
+  },
+  "Account": {
+    "title": "আমার অ্যাকাউন্ট",
+    "login": "লগইন",
+    "register": "রেজিস্টার",
+    "logout": "লগআউট"
+  },
+  "Footer": {
+    "description": "যে মুহূর্তগুলো স্মৃতি হয়ে থাকে, তাদের জন্য সুন্দর গয়না। ২০২০ সাল থেকে বাংলাদেশের ঢাকায় ভালোবাসা দিয়ে তৈরি।",
+    "shop": "কেনাকাটা",
+    "allJewellery": "সব গয়না",
+    "company": "কোম্পানি",
+    "shippingReturns": "শিপিং ও রিটার্ন",
+    "customerCare": "গ্রাহক সেবা",
+    "deliveryInformation": "ডেলিভারি তথ্য",
+    "returnPolicy": "রিটার্ন নীতি",
+    "sizeGuide": "সাইজ গাইড",
+    "careInstructions": "গয়নার যত্ন",
+    "allRightsReserved": "সর্বস্বত্ব সংরক্ষিত।",
+    "vatDelivery": "দামের মধ্যে ভ্যাট অন্তর্ভুক্ত · বাংলাদেশজুড়ে বিনামূল্যে বীমাকৃত ডেলিভারি"
+  }
+}

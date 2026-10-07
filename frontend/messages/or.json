@@ -1,0 +1,61 @@
+{
+  "Navigation": {
+    "home": "ହୋମ୍",
+    "products": "ଉତ୍ପାଦ",
+    "customJewelry": "କଷ୍ଟମ୍ ଜୁଏଲେରୀ",
+    "about": "ଆମ ବିଷୟରେ",
+    "contact": "ଯୋଗାଯୋଗ",
+    "wishlist": "ଇଚ୍ଛା ତାଲିକା",
+    "cart": "କାର୍ଟ",
+    "account": "ମୋ ଆକାଉଣ୍ଟ",
+    "shipping": "ଶିପିଂ"
+  },
+  "Common": {
+    "addToCart": "କାର୍ଟରେ ଯୋଗ କରନ୍ତୁ",
+    "buyNow": "ବର୍ତ୍ତମାନ କିଣନ୍ତୁ",
+    "checkout": "ଚେକଆଉଟ୍",
+    "continueShopping": "କିଣାକିଣି ଜାରି ରଖନ୍ତୁ",
+    "remove": "ହଟାନ୍ତୁ",
+    "save": "ସଞ୍ଚୟ କରନ୍ତୁ",
+    "cancel": "ବାତିଲ୍",
+    "search": "ଖୋଜନ୍ତୁ",
+    "loading": "ଲୋଡ୍ ହେଉଛି...",
+    "quantity": "ପରିମାଣ",
+    "price": "ମୂଲ୍ୟ",
+    "total": "ମୋଟ",
+    "subtotal": "ଉପମୋଟ",
+    "language": "ଭାଷା",
+    "selectLanguage": "ଭାଷା ଚୟନ କରନ୍ତୁ"
+  },
+  "Language": {
+    "english": "English",
+    "bengali": "বাংলা",
+    "hindi": "हिन्दी",
+    "odia": "ଓଡ଼ିଆ"
+  },
+  "Home": {
+    "title": "ଚିରନ୍ତନ ସୌନ୍ଦର୍ଯ୍ୟ",
+    "subtitle": "ଭଲପାଇବା ଏବଂ ପରମ୍ପରାରେ ତିଆରି ଅଳଙ୍କାର ଆବିଷ୍କାର କରନ୍ତୁ।",
+    "shopNow": "ବର୍ତ୍ତମାନ କିଣନ୍ତୁ",
+    "featured": "ବିଶେଷ ସଂଗ୍ରହ"
+  },
+  "Product": {
+    "details": "ଉତ୍ପାଦ ବିବରଣୀ",
+    "selectSize": "ସାଇଜ୍ ଚୟନ କରନ୍ତୁ",
+    "inStock": "ଷ୍ଟକ୍‌ରେ ଅଛି",
+    "outOfStock": "ଷ୍ଟକ୍‌ରେ ନାହିଁ",
+    "addedToCart": "ଆପଣଙ୍କ ବ୍ୟାଗ୍‌ରେ ଯୋଗ କରାଯାଇଛି"
+  },
+  "Cart": {
+    "title": "ଆପଣଙ୍କ ଶପିଂ ବ୍ୟାଗ୍",
+    "empty": "ଆପଣଙ୍କ ବ୍ୟାଗ୍ ଖାଲି ଅଛି",
+    "emptyMessage": "କିଛି ସୁନ୍ଦର ଜିନିଷ ଆବିଷ୍କାର କରନ୍ତୁ ଏବଂ ବ୍ୟାଗ୍‌ରେ ଯୋଗ କରନ୍ତୁ।",
+    "proceedCheckout": "ଚେକଆଉଟ୍‌କୁ ଯାଆନ୍ତୁ"
+  },
+  "Account": {
+    "title": "ମୋ ଆକାଉଣ୍ଟ",
+    "login": "ଲଗଇନ୍",
+    "register": "ରେଜିଷ୍ଟର",
+    "logout": "ଲଗଆଉଟ୍"
+  }
+}

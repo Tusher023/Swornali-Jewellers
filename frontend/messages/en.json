@@ -1,0 +1,86 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "products": "Shop All",
+    "rings": "Rings",
+    "necklaces": "Necklaces",
+    "earrings": "Earrings",
+    "bracelets": "Bracelets",
+    "customJewelry": "Custom Jewellery",
+    "about": "Our Story",
+    "contact": "Contact",
+    "wishlist": "Wishlist",
+    "cart": "Cart",
+    "account": "My Account",
+    "shipping": "Shipping",
+    "mainNavigation": "Main navigation",
+    "mobileNavigation": "Mobile navigation"
+  },
+  "Common": {
+    "addToCart": "Add to Cart",
+    "buyNow": "Buy Now",
+    "checkout": "Checkout",
+    "continueShopping": "Continue Shopping",
+    "remove": "Remove",
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "search": "Search",
+    "searchPlaceholder": "Search rings, necklaces, diamonds...",
+    "loading": "Loading...",
+    "quantity": "Quantity",
+    "price": "Price",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "language": "Language",
+    "selectLanguage": "Select Language",
+    "menu": "Menu",
+    "signIn": "Sign In",
+    "deliveryAnnouncement": "Complimentary insured delivery across Bangladesh on all orders"
+  },
+  "Language": {
+    "english": "English",
+    "bengali": "বাংলা",
+    "hindi": "हिन्दी",
+    "odia": "ଓଡ଼ିଆ"
+  },
+  "Home": {
+    "title": "Timeless Elegance",
+    "subtitle": "Discover jewellery crafted with love and tradition.",
+    "shopNow": "Shop Now",
+    "featured": "Featured Collection"
+  },
+  "Product": {
+    "details": "Product Details",
+    "selectSize": "Select Size",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "addedToCart": "Added to your bag"
+  },
+  "Cart": {
+    "title": "Your Shopping Bag",
+    "empty": "Your bag is empty",
+    "emptyMessage": "Discover something beautiful and add it to your bag.",
+    "proceedCheckout": "Proceed to Checkout"
+  },
+  "Account": {
+    "title": "My Account",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout"
+  },
+  "Footer": {
+    "description": "Fine jewellery for the moments that become heirlooms. Crafted with love in Dhaka, Bangladesh since 2020.",
+    "shop": "Shop",
+    "allJewellery": "All Jewellery",
+    "company": "Company",
+    "shippingReturns": "Shipping & Returns",
+    "customerCare": "Customer Care",
+    "deliveryInformation": "Delivery Information",
+    "returnPolicy": "Return Policy",
+    "sizeGuide": "Size Guide",
+    "careInstructions": "Care Instructions",
+    "allRightsReserved": "All rights reserved.",
+    "vatDelivery": "Prices include VAT · Free insured delivery across Bangladesh"
+  }
+}

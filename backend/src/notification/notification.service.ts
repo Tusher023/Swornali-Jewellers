@@ -3,11 +3,21 @@ import { PrismaService } from '../prisma.service';
 
 @Injectable()
 export class NotificationService {
-  constructor(private prisma: PrismaService) {}
+  constructor(private readonly prisma: PrismaService) {}
 
-  async create(userId: string, title: string, message: string, type: string) {
+  async create(
+    userId: string,
+    title: string,
+    message: string,
+    type: string,
+  ) {
     return this.prisma.notification.create({
-      data: { userId, title, message, type: type as any }
+      data: {
+        userId,
+        title,
+        body: message,
+        type: type as any,
+      },
     });
   }
 
@@ -15,29 +25,54 @@ export class NotificationService {
     const notifications = await this.prisma.notification.findMany({
       where: { userId },
       orderBy: { createdAt: 'desc' },
-      take: 50
+      take: 50,
     });
-    return { success: true, data: notifications };
+
+    return {
+      success: true,
+      data: notifications,
+    };
   }
 
   async markAsRead(userId: string, id: string) {
     const notification = await this.prisma.notification.findFirst({
-      where: { id, userId }
+      where: {
+        id,
+        userId,
+      },
     });
-    if (!notification) throw new NotFoundException('Notification not found');
+
+    if (!notification) {
+      throw new NotFoundException('Notification not found');
+    }
 
     await this.prisma.notification.update({
       where: { id },
-      data: { isRead: true }
+      data: {
+        isRead: true,
+      },
     });
-    return { success: true, message: 'Notification marked as read' };
+
+    return {
+      success: true,
+      message: 'Notification marked as read',
+    };
   }
 
   async markAllAsRead(userId: string) {
     await this.prisma.notification.updateMany({
-      where: { userId, isRead: false },
-      data: { isRead: true }
+      where: {
+        userId,
+        isRead: false,
+      },
+      data: {
+        isRead: true,
+      },
     });
-    return { success: true, message: 'All notifications marked as read' };
+
+    return {
+      success: true,
+      message: 'All notifications marked as read',
+    };
   }
 }
