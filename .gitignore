@@ -6,4 +6,6 @@ coverage/
 .env.local
 *.log
 backend/prisma/dev.db
+out/
+frontend/out/
 .claude/
