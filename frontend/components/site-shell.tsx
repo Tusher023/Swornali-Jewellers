@@ -26,6 +26,10 @@ export function Header() {
 
   const count = cart.reduce((total, item) => total + item.quantity, 0);
 
+  if (pathname?.startsWith('/admin')) {
+    return null;
+  }
+
   /* ───────── Scroll effect ───────── */
 
   useEffect(() => {
@@ -471,9 +475,14 @@ export function Header() {
    ═══════════════════════════════════════════ */
 
 export function Footer() {
+  const pathname = usePathname();
   const navigation = useTranslations('Navigation');
   const common = useTranslations('Common');
   const footer = useTranslations('Footer');
+
+  if (pathname?.startsWith('/admin')) {
+    return null;
+  }
 
   return (
     <footer className="site-footer">
