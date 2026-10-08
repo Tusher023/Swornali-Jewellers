@@ -19,15 +19,15 @@ export default function AboutPage() {
               <div className="inline-block px-3 py-1 bg-(--gold-400)/10 border border-(--gold-400)/30 rounded text-xs text-(--gold-400) uppercase tracking-widest font-semibold">
                 স্বর্ণালী জুয়েলার্স · যশোর
               </div>
-              <h2 className="text-3xl font-display text-(--gold-400)">Tradition, Hallmark & Trust</h2>
+              <h2 className="text-3xl font-display text-(--gold-400)">ঐতিহ্য, হলমার্ক ও বিশ্বাস</h2>
               <p className="text-(--text-secondary) leading-relaxed">
-                Led by Proprietor <strong>Ram Prasad Tarafder (রাম প্রসাদ তরফদার)</strong> at Mehedi Market, Rajganj Road, Jashore, <strong>Swornali Jewellers</strong> has established an enduring standard of purity and trust.
+                প্রোপ্রাইটর <strong>রাম প্রসাদ তরফদার</strong>-এর নেতৃত্বে যশোরের রাজগঞ্জ রোডের মেহেদী মার্কেটে অবস্থিত <strong>স্বর্ণালী জুয়েলার্স</strong> দীর্ঘদিন ধরে স্বর্ণের বিশুদ্ধতা, গুণমান ও আস্থার এক অনন্য মানদণ্ড প্রতিষ্ঠা করে আসছে।
               </p>
               <p className="text-(--text-secondary) leading-relaxed">
-                We specialize in tasteful modern design Guinea gold (গিনি সোনা) and certified hallmark 18 Karat, 21 Karat, and 22 Karat gold and pure silver jewellery. From regal wedding bridal sets to bespoke everyday ornaments, each creation is handcrafted with unparalleled dedication.
+                আমরা রুচিশীল আধুনিক ডিজাইনের গিনি সোনা, পাশাপাশি হলমার্কযুক্ত ১৮ ক্যারেট, ২১ ক্যারেট ও ২২ ক্যারেট স্বর্ণ এবং বিশুদ্ধ রূপার গহনা তৈরি ও সরবরাহ করি। রাজকীয় বিবাহের ব্রাইডাল সেট থেকে শুরু করে প্রতিদিনের ব্যবহারের জন্য বিশেষভাবে তৈরি গহনা—প্রতিটি অলংকারই অত্যন্ত যত্ন, দক্ষতা ও কারিগরি নৈপুণ্যের সঙ্গে তৈরি করা হয়।
               </p>
               <p className="text-(--text-secondary) leading-relaxed">
-                Every piece leaving our atelier carries our uncompromising guarantee of hallmarked purity and artisanal excellence.
+                আমাদের কারখানা থেকে বের হওয়া প্রতিটি গহনার সঙ্গে থাকে হলমার্কযুক্ত বিশুদ্ধতার নিশ্চয়তা এবং নিখুঁত কারুশিল্পের প্রতিশ্রুতি।
               </p>
             </div>
             <div className="relative h-[420px] rounded-xl overflow-hidden shadow-2xl shadow-(--gold-400)/10 border border-(--gold-400)/20">
