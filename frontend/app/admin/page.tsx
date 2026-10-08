@@ -540,20 +540,14 @@ export default function AdminDashboardPage() {
             <span className="w-2.5 h-2.5 rounded-full bg-[#c9a96e] animate-pulse"></span>
             <span className="text-xs uppercase tracking-widest text-[#c9a96e] font-semibold">Owner Portal</span>
           </div>
-          <div className="flex items-center gap-3">
+          <Link href="/" className="block group mb-3">
             <img
-              src="/Swornali-Jewellers/images/logo.png"
-              alt="স্বর্ণালী জুয়েলার্স"
-              className="w-12 h-12 object-contain drop-shadow-[0_2px_10px_rgba(201,169,110,0.35)] flex-shrink-0"
+              src="/Swornali-Jewellers/images/brand-lockup.png"
+              alt="স্বর্ণালী জুয়েলার্স - SWORNALI JEWELLERS"
+              className="h-11 w-auto object-contain drop-shadow-[0_2px_10px_rgba(201,169,110,0.3)] transition-transform duration-300 group-hover:scale-105"
             />
-            <div>
-              <h1 className="font-display text-xl tracking-wider text-[#f5f5f5] font-bold leading-tight">
-                স্বর্ণালী জুয়েলার্স
-              </h1>
-              <span className="block text-[9px] tracking-[0.25em] font-sans text-[#a0a0a0] uppercase font-semibold">SWORNALI JEWELLERS</span>
-            </div>
-          </div>
-          <div className="mt-2 text-xs font-semibold text-[#c9a96e]">
+          </Link>
+          <div className="text-xs font-semibold text-[#c9a96e]">
             রাম প্রসাদ তরফদার <span className="text-[10px] text-[#888] font-normal">(প্রোপাইটার)</span>
           </div>
           <div className="text-[11px] text-[#888] mt-1 leading-snug">
