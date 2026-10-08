@@ -397,3 +397,4 @@ export function JewelryHero3D({ onSelectMetal }: JewelryHero3DProps) {
     </div>
   );
 }
+
