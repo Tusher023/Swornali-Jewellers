@@ -25,6 +25,7 @@ import {
   Scale,
   RefreshCw,
   X,
+  Upload,
   Phone,
   Mail,
   Calendar,
@@ -125,10 +126,14 @@ export default function AdminDashboardPage() {
     weightGrams: 8.5,
     stone: 'None',
     description: '',
-    image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80',
+    image: '',
     stock: 5,
     badge: 'New Arrival',
   });
+
+  const [uploadedImagePreview, setUploadedImagePreview] = useState<string | null>(null);
+  const [uploadedFileName, setUploadedFileName] = useState<string>('');
+  const [showUrlFallback, setShowUrlFallback] = useState<boolean>(false);
 
   // Orders State
   const [orders, setOrders] = useState<AdminOrder[]>([
@@ -377,9 +382,29 @@ export default function AdminDashboardPage() {
   };
 
   // Actions for Products
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (file.size > 10 * 1024 * 1024) {
+        showToast('Image file too large (maximum 10MB allowed)');
+        return;
+      }
+      setUploadedFileName(file.name);
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const base64Url = event.target?.result as string;
+        setNewProduct((prev) => ({ ...prev, image: base64Url }));
+        setUploadedImagePreview(base64Url);
+        showToast(`Image "${file.name}" uploaded successfully!`);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleAddProduct = () => {
     if (!newProduct.name) return;
     const slug = newProduct.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    const finalImage = newProduct.image || uploadedImagePreview || 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80';
     const productToAdd: Product = {
       id: `p-${Date.now()}`,
       slug,
@@ -393,11 +418,11 @@ export default function AdminDashboardPage() {
       stone: newProduct.stone,
       rating: 5.0,
       reviews: 1,
-      images: [newProduct.image],
+      images: [finalImage],
       sizes: ['Standard', 'Custom'],
       longDescription: newProduct.description || 'Handcrafted luxury jewelry from Dhaka.',
       description: newProduct.description || 'Exquisite fine jewelry piece handcrafted by Swornali Jewellers.',
-      image: newProduct.image,
+      image: finalImage,
       stock: Number(newProduct.stock),
       badge: newProduct.badge,
     };
@@ -405,6 +430,9 @@ export default function AdminDashboardPage() {
     setProductList([productToAdd, ...productList]);
     setIsAddProductOpen(false);
     showToast(`New product "${productToAdd.name}" added to catalog!`);
+    setUploadedImagePreview(null);
+    setUploadedFileName('');
+    setShowUrlFallback(false);
     setNewProduct({
       name: '',
       category: 'Rings',
@@ -414,7 +442,7 @@ export default function AdminDashboardPage() {
       weightGrams: 8.5,
       stone: 'None',
       description: '',
-      image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80',
+      image: '',
       stock: 5,
       badge: 'New Arrival',
     });
@@ -1440,14 +1468,111 @@ export default function AdminDashboardPage() {
               </div>
 
               <div>
-                <label htmlFor="new-product-image" className="block text-xs text-[#888] uppercase tracking-wider mb-1">High-Res Image URL</label>
+                <label className="block text-xs text-[#888] uppercase tracking-wider mb-2">Upload Product Images</label>
+                
+                {uploadedImagePreview || newProduct.image ? (
+                  <div className="relative border border-[#333] rounded-lg p-3 bg-[#161616] flex items-center gap-4">
+                    <div className="relative w-20 h-20 rounded-md overflow-hidden bg-[#222] border border-[#444] flex-shrink-0">
+                      <img
+                        src={uploadedImagePreview || newProduct.image}
+                        alt="Product preview"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-xs font-semibold text-[#f5f5f5] truncate">
+                        {uploadedFileName || 'Selected Product Image'}
+                      </div>
+                      <div className="text-[11px] text-[#4ade80] flex items-center gap-1 mt-0.5">
+                        <CheckCircle2 size={12} /> Ready for publishing
+                      </div>
+                      <div className="flex items-center gap-2 mt-2">
+                        <label
+                          htmlFor="product-file-upload"
+                          className="cursor-pointer text-[11px] font-semibold text-[#c9a96e] hover:underline flex items-center gap-1"
+                        >
+                          <Upload size={12} /> Change photo
+                        </label>
+                        <span className="text-[#555]">|</span>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setUploadedImagePreview(null);
+                            setUploadedFileName('');
+                            setNewProduct((prev) => ({ ...prev, image: '' }));
+                          }}
+                          className="text-[11px] text-[#f87171] hover:underline"
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <label
+                    htmlFor="product-file-upload"
+                    onDragOver={(e) => e.preventDefault()}
+                    onDrop={(e) => {
+                      e.preventDefault();
+                      const file = e.dataTransfer.files?.[0];
+                      if (file) {
+                        setUploadedFileName(file.name);
+                        const reader = new FileReader();
+                        reader.onload = (event) => {
+                          const base64Url = event.target?.result as string;
+                          setNewProduct((prev) => ({ ...prev, image: base64Url }));
+                          setUploadedImagePreview(base64Url);
+                          showToast(`Image "${file.name}" uploaded!`);
+                        };
+                        reader.readAsDataURL(file);
+                      }
+                    }}
+                    className="border-2 border-dashed border-[#333] hover:border-[#c9a96e] rounded-lg p-6 bg-[#161616] hover:bg-[#1a1a1a] transition-all cursor-pointer flex flex-col items-center justify-center text-center group"
+                  >
+                    <div className="w-12 h-12 rounded-full bg-[#202020] group-hover:bg-[#282216] flex items-center justify-center text-[#c9a96e] mb-3 transition-colors">
+                      <Upload size={22} />
+                    </div>
+                    <span className="text-sm font-semibold text-[#f5f5f5]">
+                      Click to upload or drag & drop image
+                    </span>
+                    <span className="text-xs text-[#777] mt-1">
+                      High-resolution PNG, JPG, WEBP (Up to 10MB)
+                    </span>
+                  </label>
+                )}
+
                 <input
-                  id="new-product-image"
-                  type="text"
-                  value={newProduct.image}
-                  onChange={(e) => setNewProduct({ ...newProduct, image: e.target.value })}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded px-3 py-2 text-sm text-[#f5f5f5] focus:outline-none focus:border-[#c9a96e]"
+                  id="product-file-upload"
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                  className="hidden"
                 />
+
+                <div className="mt-2 text-right">
+                  <button
+                    type="button"
+                    onClick={() => setShowUrlFallback(!showUrlFallback)}
+                    className="text-[11px] text-[#777] hover:text-[#c9a96e] underline"
+                  >
+                    {showUrlFallback ? 'Hide URL input' : 'Or paste image link instead'}
+                  </button>
+                </div>
+
+                {showUrlFallback && (
+                  <div className="mt-2">
+                    <input
+                      type="text"
+                      placeholder="https://..."
+                      value={newProduct.image}
+                      onChange={(e) => {
+                        setNewProduct({ ...newProduct, image: e.target.value });
+                        setUploadedImagePreview(e.target.value);
+                      }}
+                      className="w-full bg-[#1a1a1a] border border-[#333] rounded px-3 py-1.5 text-xs text-[#f5f5f5] focus:outline-none focus:border-[#c9a96e]"
+                    />
+                  </div>
+                )}
               </div>
 
               <div>
