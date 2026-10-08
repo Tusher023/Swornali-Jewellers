@@ -10,6 +10,11 @@ export const metadata: Metadata = {
     'Swornali Jewellers (স্বর্ণালী জুয়েলার্স) — Proprietor: Ram Prasad Tarafder. Tasteful modern design Guinea gold and Hallmarked 18K/21K/22K gold & silver jewellery. Mehedi Market, Rajganj Road, Jashore, Bangladesh.',
   keywords:
     'Swornali Jewellers, স্বর্ণালী জুয়েলার্স, Ram Prasad Tarafder, রাম প্রসাদ তরফদার, Jashore, যশোর, Rajganj Road, gold jewellery, 22K gold, 21K gold, 18K gold, guinea gold, hallmark silver, Bangladesh',
+  icons: {
+    icon: '/Swornali-Jewellers/images/logo.png',
+    shortcut: '/Swornali-Jewellers/images/logo.png',
+    apple: '/Swornali-Jewellers/images/logo.png',
+  },
 };
 
 export default function RootLayout({

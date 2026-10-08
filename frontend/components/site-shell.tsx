@@ -95,9 +95,20 @@ export function Header() {
 
           {/* ───────── Brand ───────── */}
 
-          <Link href="/" className="brand-logo">
-            SWORNALI
-            <span>JEWELLERS</span>
+          <Link href="/" className="brand-logo flex items-center gap-3">
+            <img
+              src="/Swornali-Jewellers/images/logo.png"
+              alt="স্বর্ণালী জুয়েলার্স - Swornali Jewellers"
+              className="h-10 md:h-12 w-auto object-contain drop-shadow-[0_2px_10px_rgba(201,169,110,0.35)] transition-transform duration-300 hover:scale-105"
+            />
+            <div className="flex flex-col text-left">
+              <span className="font-display tracking-widest text-[#f5f5f5] text-base md:text-lg font-bold leading-tight">
+                স্বর্ণালী
+              </span>
+              <span className="text-[9px] tracking-[0.28em] text-[#c9a96e] font-semibold uppercase leading-none">
+                JEWELLERS
+              </span>
+            </div>
           </Link>
 
           {/* ═════════════════════════════════════
@@ -493,15 +504,21 @@ export function Footer() {
             ═════════════════════════════════════ */}
 
         <div className="footer-brand">
-          <div
-            className="brand-logo"
-            style={{
-              marginBottom: '4px',
-            }}
-          >
-            SWORNALI
-            <span>JEWELLERS</span>
-          </div>
+          <Link href="/" className="inline-flex items-center gap-3.5 mb-4 group">
+            <img
+              src="/Swornali-Jewellers/images/logo.png"
+              alt="স্বর্ণালী জুয়েলার্স - Swornali Jewellers"
+              className="h-14 w-auto object-contain drop-shadow-[0_2px_12px_rgba(201,169,110,0.4)] transition-transform duration-300 group-hover:scale-105"
+            />
+            <div className="flex flex-col text-left">
+              <span className="font-display tracking-widest text-[#f5f5f5] text-xl font-bold leading-tight">
+                স্বর্ণালী
+              </span>
+              <span className="text-[10px] tracking-[0.3em] text-[#c9a96e] font-semibold uppercase">
+                JEWELLERS
+              </span>
+            </div>
+          </Link>
 
           <p style={{ fontSize: '0.82rem', lineHeight: '1.5', color: 'var(--text-secondary)' }}>
             {footer('description')}

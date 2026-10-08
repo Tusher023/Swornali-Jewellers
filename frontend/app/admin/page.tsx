@@ -536,14 +536,23 @@ export default function AdminDashboardPage() {
           ═══════════════════════════════════════════════ */}
       <aside className="w-full md:w-64 bg-[#0e0e0e] border-b md:border-b-0 md:border-r border-[#222] flex flex-col flex-shrink-0">
         <div className="p-6 border-b border-[#1c1c1c]">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 mb-3">
             <span className="w-2.5 h-2.5 rounded-full bg-[#c9a96e] animate-pulse"></span>
             <span className="text-xs uppercase tracking-widest text-[#c9a96e] font-semibold">Owner Portal</span>
           </div>
-          <h1 className="font-display text-2xl tracking-wider text-[#f5f5f5] mt-1 font-bold">
-            স্বর্ণালী জুয়েলার্স
-            <span className="block text-[10px] tracking-[0.25em] font-sans text-[#a0a0a0]">SWORNALI JEWELLERS</span>
-          </h1>
+          <div className="flex items-center gap-3">
+            <img
+              src="/Swornali-Jewellers/images/logo.png"
+              alt="স্বর্ণালী জুয়েলার্স"
+              className="w-12 h-12 object-contain drop-shadow-[0_2px_10px_rgba(201,169,110,0.35)] flex-shrink-0"
+            />
+            <div>
+              <h1 className="font-display text-xl tracking-wider text-[#f5f5f5] font-bold leading-tight">
+                স্বর্ণালী জুয়েলার্স
+              </h1>
+              <span className="block text-[9px] tracking-[0.25em] font-sans text-[#a0a0a0] uppercase font-semibold">SWORNALI JEWELLERS</span>
+            </div>
+          </div>
           <div className="mt-2 text-xs font-semibold text-[#c9a96e]">
             রাম প্রসাদ তরফদার <span className="text-[10px] text-[#888] font-normal">(প্রোপাইটার)</span>
           </div>
