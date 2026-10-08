@@ -541,16 +541,25 @@ export default function AdminDashboardPage() {
             <span className="text-xs uppercase tracking-widest text-[#c9a96e] font-semibold">Owner Portal</span>
           </div>
           <h1 className="font-display text-2xl tracking-wider text-[#f5f5f5] mt-1 font-bold">
-            SWORNALI
-            <span className="block text-[10px] tracking-[0.3em] font-sans text-[#a0a0a0]">JEWELLERS EXEC</span>
+            স্বর্ণালী জুয়েলার্স
+            <span className="block text-[10px] tracking-[0.25em] font-sans text-[#a0a0a0]">SWORNALI JEWELLERS</span>
           </h1>
+          <div className="mt-2 text-xs font-semibold text-[#c9a96e]">
+            রাম প্রসাদ তরফদার <span className="text-[10px] text-[#888] font-normal">(প্রোপাইটার)</span>
+          </div>
+          <div className="text-[11px] text-[#888] mt-1 leading-snug">
+            📍 মেহেদী মার্কেট, রাজগঞ্জ রোড, যশোর
+          </div>
+          <div className="text-[11px] text-[#c9a96e] mt-1">
+            📞 01818-341601 / 01990-544288
+          </div>
         </div>
 
         {/* Live Gold Ticker Widget in Sidebar */}
         <div className="p-4 mx-4 my-3 bg-[#141414] border border-[#262626] rounded-md">
           <div className="flex items-center justify-between text-xs text-[#a0a0a0] mb-1.5">
             <span className="flex items-center gap-1 text-[#c9a96e] font-medium">
-              <Scale size={13} /> Live Gold Rate
+              <Scale size={13} /> Live Hallmark Rate
             </span>
             <button
               onClick={() => {
@@ -564,16 +573,20 @@ export default function AdminDashboardPage() {
           </div>
           <div className="text-xs space-y-1">
             <div className="flex justify-between">
-              <span className="text-[#888]">24K (g):</span>
-              <span className="font-medium text-[#e5e5e5]">{formatPrice(goldRates['24K'])}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-[#888]">22K (g):</span>
+              <span className="text-[#888]">22K Standard:</span>
               <span className="font-medium text-[#e5e5e5]">{formatPrice(goldRates['22K'])}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-[#888]">18K (g):</span>
+              <span className="text-[#888]">21K Guinea:</span>
+              <span className="font-medium text-[#c9a96e]">{formatPrice(goldRates['21K'] || 9850)}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-[#888]">18K Hallmark:</span>
               <span className="font-medium text-[#e5e5e5]">{formatPrice(goldRates['18K'])}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-[#888]">24K Fine Gold:</span>
+              <span className="font-medium text-[#e5e5e5]">{formatPrice(goldRates['24K'])}</span>
             </div>
           </div>
         </div>

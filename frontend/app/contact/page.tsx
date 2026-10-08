@@ -143,8 +143,21 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-(--text-primary) font-medium mb-1">Our Store</h3>
-                    <p className="text-(--text-secondary)">Gulshan, Dhaka, Bangladesh</p>
+                    <h3 className="text-(--text-primary) font-medium mb-1">Our Showroom</h3>
+                    <p className="text-(--text-secondary)">মেহেদী মার্কেট, রাজগঞ্জ রোড, যশোর</p>
+                    <p className="text-xs text-(--text-muted) mt-0.5">Mehedi Market, Rajganj Road, Jashore, Bangladesh</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-(--gold-400)/10 flex items-center justify-center shrink-0 text-(--gold-400)">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-(--text-primary) font-medium mb-1">Proprietor</h3>
+                    <p className="text-(--text-secondary)">রাম প্রসাদ তরফদার (Ram Prasad Tarafder)</p>
                   </div>
                 </div>
 
@@ -155,20 +168,22 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-(--text-primary) font-medium mb-1">Phone</h3>
-                    <p className="text-(--text-secondary)">+880 1700-SWORNALI</p>
+                    <h3 className="text-(--text-primary) font-medium mb-1">Mobile / Hotline</h3>
+                    <p className="text-(--text-secondary)">
+                      <a href="tel:+8801818341601" className="hover:text-(--gold-400)">+880 1818-341601</a> / <a href="tel:+8801990544288" className="hover:text-(--gold-400)">+880 1990-544288</a>
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full bg-(--gold-400)/10 flex items-center justify-center shrink-0 text-(--gold-400)">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-(--text-primary) font-medium mb-1">Email</h3>
-                    <p className="text-(--text-secondary)">hello@swornali.com</p>
+                    <h3 className="text-(--text-primary) font-medium mb-1">Purity & Guarantee</h3>
+                    <p className="text-(--text-secondary) text-sm">১৮, ২১ ও ২২ ক্যারেট গিনি সোনা ও হলমার্ক রূপার গহনা (Hallmarked 18K/21K/22K Gold & Silver)</p>
                   </div>
                 </div>
 
@@ -179,14 +194,19 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-(--text-primary) font-medium mb-1">Store Hours</h3>
-                    <p className="text-(--text-secondary)">Every day, 10am - 8pm</p>
+                    <h3 className="text-(--text-primary) font-medium mb-1">Showroom Hours</h3>
+                    <p className="text-(--text-secondary)">Every day, 10:00 AM - 9:00 PM</p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-10 pt-8 border-t border-(--gold-400)/20">
-                <a href="#" className="flex items-center justify-center gap-2 w-full py-3 bg-[#25D366]/10 text-[#25D366] rounded-md hover:bg-[#25D366]/20 transition-colors font-medium border border-[#25D366]/30">
+              <div className="mt-8 pt-6 border-t border-(--gold-400)/20 space-y-4">
+                <a
+                  href="https://wa.me/8801818341601"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 w-full py-3 bg-[#25D366]/10 text-[#25D366] rounded-md hover:bg-[#25D366]/20 transition-colors font-medium border border-[#25D366]/30"
+                >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                   </svg>

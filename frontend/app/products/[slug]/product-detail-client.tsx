@@ -17,7 +17,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
   const [activeImage, setActiveImage] = useState('')
   const [selectedSize, setSelectedSize] = useState('')
   const [quantity, setQuantity] = useState(1)
-  const [goldPurity, setGoldPurity] = useState<'18K' | '22K' | '24K'>('22K')
+  const [goldPurity, setGoldPurity] = useState<'18K' | '21K' | '22K' | '24K'>('22K')
   
   const [openAccordion, setOpenAccordion] = useState<string | null>('description')
 
@@ -243,11 +243,12 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
                       <select 
                         className="bg-[var(--bg-card)] border border-[#333] text-[var(--text-primary)] rounded px-2 py-1 text-sm outline-none focus:border-[var(--gold-500)]"
                         value={goldPurity}
-                        onChange={(e) => setGoldPurity(e.target.value as '18K'|'22K'|'24K')}
+                        onChange={(e) => setGoldPurity(e.target.value as '18K'|'21K'|'22K'|'24K')}
                       >
-                        <option value="18K">18K</option>
-                        <option value="22K">22K</option>
-                        <option value="24K">24K</option>
+                        <option value="18K">18K (75.0% Gold)</option>
+                        <option value="21K">21K (87.5% Guinea Gold)</option>
+                        <option value="22K">22K (91.6% Standard Gold)</option>
+                        <option value="24K">24K (99.9% Fine Gold)</option>
                       </select>
                     </div>
                   </div>

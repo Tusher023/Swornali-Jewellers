@@ -5,11 +5,11 @@ import { StoreProvider } from '../components/store-provider';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Swornali Jewellers | Timeless Elegance in Gold & Diamonds',
+  title: 'Swornali Jewellers | স্বর্ণালী জুয়েলার্স - Gold, Hallmark & Silver Jewellery',
   description:
-    'Premium handcrafted gold, diamond, and gemstone jewellery from Dhaka, Bangladesh. Explore rings, necklaces, earrings, bracelets and custom pieces — free insured delivery.',
+    'Swornali Jewellers (স্বর্ণালী জুয়েলার্স) — Proprietor: Ram Prasad Tarafder. Tasteful modern design Guinea gold and Hallmarked 18K/21K/22K gold & silver jewellery. Mehedi Market, Rajganj Road, Jashore, Bangladesh.',
   keywords:
-    'jewellery, gold, diamond, Bangladesh, Dhaka, rings, necklaces, earrings, bracelets, wedding, engagement',
+    'Swornali Jewellers, স্বর্ণালী জুয়েলার্স, Ram Prasad Tarafder, রাম প্রসাদ তরফদার, Jashore, যশোর, Rajganj Road, gold jewellery, 22K gold, 21K gold, 18K gold, guinea gold, hallmark silver, Bangladesh',
 };
 
 export default function RootLayout({

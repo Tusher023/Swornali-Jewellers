@@ -6,9 +6,9 @@ export default function AboutPage() {
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <header className="page-header text-center mb-20">
-          <h1 className="text-4xl md:text-5xl font-display text-(--gold-400) mb-4">Our Story</h1>
+          <h1 className="text-4xl md:text-5xl font-display text-(--gold-400) mb-4">Our Heritage & Story</h1>
           <p className="text-(--text-secondary) text-lg max-w-2xl mx-auto">
-            A legacy of craftsmanship, purity, and timeless elegance rooted in the heart of Dhaka.
+            A legacy of master craftsmanship, purity, and timeless elegance founded by Ram Prasad Tarafder in Jashore.
           </p>
         </header>
 
@@ -16,23 +16,25 @@ export default function AboutPage() {
         <section className="mb-24">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl font-display text-(--gold-400)">Tradition Meets Modernity</h2>
+              <div className="inline-block px-3 py-1 bg-(--gold-400)/10 border border-(--gold-400)/30 rounded text-xs text-(--gold-400) uppercase tracking-widest font-semibold">
+                স্বর্ণালী জুয়েলার্স · যশোর
+              </div>
+              <h2 className="text-3xl font-display text-(--gold-400)">Tradition, Hallmark & Trust</h2>
               <p className="text-(--text-secondary) leading-relaxed">
-                Founded in Dhaka, Swornali Jewellers has been a symbol of trust and exquisite craftsmanship for generations. We believe that jewelry is more than just an accessory; it is a reflection of heritage, love, and life's most precious moments.
+                Led by Proprietor <strong>Ram Prasad Tarafder (রাম প্রসাদ তরফদার)</strong> at Mehedi Market, Rajganj Road, Jashore, <strong>Swornali Jewellers</strong> has established an enduring standard of purity and trust.
               </p>
               <p className="text-(--text-secondary) leading-relaxed">
-                Our master artisans blend age-old traditional techniques with contemporary designs to create pieces that transcend time. From intricate bridal sets to minimalist daily wear, every piece is crafted with unparalleled dedication.
+                We specialize in tasteful modern design Guinea gold (গিনি সোনা) and certified hallmark 18 Karat, 21 Karat, and 22 Karat gold and pure silver jewellery. From regal wedding bridal sets to bespoke everyday ornaments, each creation is handcrafted with unparalleled dedication.
               </p>
               <p className="text-(--text-secondary) leading-relaxed">
-                We source only the finest materials, ensuring that every diamond sparkles with brilliance and every ounce of gold holds true to its purity promise.
+                Every piece leaving our atelier carries our uncompromising guarantee of hallmarked purity and artisanal excellence.
               </p>
             </div>
-            <div className="relative h-[500px] rounded-xl overflow-hidden shadow-2xl shadow-(--gold-400)/10 border border-(--gold-400)/20">
-              <Image 
-                src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1470&auto=format&fit=crop" 
-                alt="Jewelry Craftsmanship" 
-                fill 
-                className="object-cover"
+            <div className="relative h-[420px] rounded-xl overflow-hidden shadow-2xl shadow-(--gold-400)/10 border border-(--gold-400)/20">
+              <img 
+                src="/Swornali-Jewellers/images/visiting-card.jpg" 
+                alt="Swornali Jewellers Official Business Card - Ram Prasad Tarafder, Jashore" 
+                className="w-full h-full object-contain bg-[#111] p-3"
               />
             </div>
           </div>

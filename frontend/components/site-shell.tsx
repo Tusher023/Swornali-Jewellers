@@ -503,42 +503,49 @@ export function Footer() {
             <span>JEWELLERS</span>
           </div>
 
-          <p>
+          <p style={{ fontSize: '0.82rem', lineHeight: '1.5', color: 'var(--text-secondary)' }}>
             {footer('description')}
           </p>
+
+          <div style={{ marginTop: '14px', fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: '1.6' }}>
+            <div style={{ color: 'var(--gold-400)', fontWeight: 600 }}>{footer('proprietor')}</div>
+            <div>📍 {footer('location')}</div>
+            <div>📞 {footer('hotline')}</div>
+          </div>
 
           <div
             className="footer-social"
             style={{
-              marginTop: '20px',
+              marginTop: '16px',
             }}
           >
+            <a
+              href="https://wa.me/8801818341601"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              title="Chat on WhatsApp (+880 1818-341601)"
+            >
+              wa
+            </a>
+            <a
+              href="tel:+8801818341601"
+              aria-label="Call"
+              title="Call 01818-341601"
+            >
+              📞
+            </a>
             <a
               href="#"
               aria-label="Facebook"
             >
               f
             </a>
-
             <a
               href="#"
               aria-label="Instagram"
             >
               ig
-            </a>
-
-            <a
-              href="#"
-              aria-label="WhatsApp"
-            >
-              wa
-            </a>
-
-            <a
-              href="#"
-              aria-label="Pinterest"
-            >
-              p
             </a>
           </div>
         </div>
