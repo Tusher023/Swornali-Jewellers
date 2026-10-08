@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, type Variants } from 'framer-motion';
 import { products, categories, testimonials, formatPrice } from '../lib/products';
+import { JewelryHero3D } from '../components/jewelry-hero-3d';
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -25,43 +26,86 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* 1. HERO SECTION */}
-      <section className="hero relative h-[90vh] flex items-center justify-center overflow-hidden bg-black">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1599643478524-fb66f4568db7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-            alt="Luxury Jewellery"
-            fill
-            className="object-cover object-center opacity-70"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80" />
+      {/* 1. HERO SECTION WITH 3D INTERACTIVE JEWELRY */}
+      <section className="hero relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-[#070707] pt-24 pb-12">
+        {/* Ambient Luxury Background Glow */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#c9a96e]/10 rounded-full blur-[120px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-[480px] h-[480px] bg-[#d4af37]/8 rounded-full blur-[140px]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-[#070707]/60 to-[#070707]" />
         </div>
-        
-        <motion.div 
-          className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20"
-          initial="hidden"
-          animate="visible"
-          variants={staggerContainer}
-        >
-          <motion.span variants={fadeInUp} className="inline-block text-gold-400 tracking-widest text-sm uppercase mb-6 font-medium">
-            The 2026 Collection
-          </motion.span>
-          <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl lg:text-8xl font-display text-white mb-6 leading-[1.1]">
-            Elegance That Lasts <span className="text-gold-500 italic font-light">Forever</span>
-          </motion.h1>
-          <motion.p variants={fadeInUp} className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-            Discover our handcrafted collections of exquisite gold and diamond pieces, designed to celebrate your most precious moments.
-          </motion.p>
-          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-5">
-            <Link href="/products" className="btn btn-primary btn-lg w-full sm:w-auto px-8 py-4 bg-gold-500 text-black hover:bg-gold-400 transition-colors border-none text-sm tracking-wider font-semibold">
-              Shop Collection
-            </Link>
-            <Link href="/custom-jewelry" className="btn btn-secondary btn-lg w-full sm:w-auto px-8 py-4 bg-transparent border border-white/30 text-white hover:bg-white hover:text-black transition-colors text-sm tracking-wider font-semibold">
-              Custom Jewellery
-            </Link>
-          </motion.div>
-        </motion.div>
+
+        <div className="container mx-auto px-4 md:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left Content */}
+            <motion.div
+              className="lg:col-span-6 text-center lg:text-left pt-6 lg:pt-0"
+              initial="hidden"
+              animate="visible"
+              variants={staggerContainer}
+            >
+              <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#c9a96e]/10 border border-[#c9a96e]/30 text-xs text-[#c9a96e] uppercase tracking-[0.22em] font-semibold mb-6">
+                <span className="w-2 h-2 rounded-full bg-[#c9a96e] animate-ping" />
+                The 2026 Collection · স্বর্ণালী জুয়েলার্স
+              </motion.div>
+
+              <motion.h1 variants={fadeInUp} className="text-4xl sm:text-6xl lg:text-7xl font-display text-white mb-6 leading-[1.08] tracking-tight">
+                Elegance That Lasts <span className="text-[#c9a96e] italic font-light block sm:inline">Forever</span>
+              </motion.h1>
+
+              <motion.p variants={fadeInUp} className="text-base sm:text-lg text-[#b8b3a8] mb-8 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+                স্বর্ণালী জুয়েলার্স — যশোরের রাজগঞ্জ রোডে রাম প্রসাদ তরফদার-এর ঐতিহ্যের ছোঁয়ায় তৈরি রুচিসম্মত ১৮/২১/২২ ক্যারেট গিনি সোনা ও বিশুদ্ধ হলমার্ক রূপার গহনা।
+              </motion.p>
+
+              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
+                <Link
+                  href="/products"
+                  className="w-full sm:w-auto px-8 py-4 rounded-md bg-[#c9a96e] text-black hover:bg-[#d8b97e] transition-all duration-300 text-sm tracking-widest uppercase font-bold text-center shadow-lg shadow-[#c9a96e]/20 hover:scale-[1.02]"
+                >
+                  Shop Collection
+                </Link>
+                <Link
+                  href="/custom-jewelry"
+                  className="w-full sm:w-auto px-8 py-4 rounded-md bg-transparent border border-white/20 text-white hover:border-[#c9a96e] hover:text-[#c9a96e] transition-all duration-300 text-sm tracking-widest uppercase font-semibold text-center hover:scale-[1.02]"
+                >
+                  Custom Jewellery
+                </Link>
+              </motion.div>
+
+              {/* Trust Badges */}
+              <motion.div variants={fadeInUp} className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 text-left">
+                <div>
+                  <div className="text-lg font-bold text-[#c9a96e]">100%</div>
+                  <div className="text-[11px] text-[#888] uppercase tracking-wider">Hallmarked Purity</div>
+                </div>
+                <div>
+                  <div className="text-lg font-bold text-[#c9a96e]">22K & 21K</div>
+                  <div className="text-[11px] text-[#888] uppercase tracking-wider">Guinea Gold</div>
+                </div>
+                <div>
+                  <div className="text-lg font-bold text-[#c9a96e]">Jashore</div>
+                  <div className="text-[11px] text-[#888] uppercase tracking-wider">Flagship Atelier</div>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Right 3D Animated Interactive Experience */}
+            <motion.div
+              className="lg:col-span-6 relative flex items-center justify-center"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="relative w-full max-w-lg lg:max-w-none">
+                {/* 3D Backdrop Glow Orb */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] md:w-[440px] h-[340px] md:h-[440px] bg-gradient-to-tr from-[#c9a96e]/20 via-[#000000]/40 to-[#0e3b2e]/30 rounded-full blur-3xl pointer-events-none" />
+
+                {/* 3D Canvas Component */}
+                <JewelryHero3D />
+              </div>
+            </motion.div>
+          </div>
+        </div>
       </section>
 
       {/* 2. TRUST BAR */}
