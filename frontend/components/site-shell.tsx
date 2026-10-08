@@ -521,18 +521,18 @@ export function Footer() {
             }}
           >
             <a
-              href="https://wa.me/8801818341601"
+              href="https://wa.me/8801818049601"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
-              title="Chat on WhatsApp (+880 1818-341601)"
+              title="Chat on WhatsApp (+880 1818-049601)"
             >
               wa
             </a>
             <a
-              href="tel:+8801818341601"
+              href="tel:+8801818049601"
               aria-label="Call"
-              title="Call 01818-341601"
+              title="Call 01818-049601"
             >
               📞
             </a>

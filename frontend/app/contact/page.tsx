@@ -170,7 +170,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-(--text-primary) font-medium mb-1">Mobile / Hotline</h3>
                     <p className="text-(--text-secondary)">
-                      <a href="tel:+8801818341601" className="hover:text-(--gold-400)">+880 1818-341601</a> / <a href="tel:+8801990544288" className="hover:text-(--gold-400)">+880 1990-544288</a>
+                      <a href="tel:+8801818049601" className="hover:text-(--gold-400)">+880 1818-049601</a> / <a href="tel:+8801990544288" className="hover:text-(--gold-400)">+880 1990-544288</a>
                     </p>
                   </div>
                 </div>
@@ -202,7 +202,7 @@ export default function ContactPage() {
 
               <div className="mt-8 pt-6 border-t border-(--gold-400)/20 space-y-4">
                 <a
-                  href="https://wa.me/8801818341601"
+                  href="https://wa.me/8801818049601"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 w-full py-3 bg-[#25D366]/10 text-[#25D366] rounded-md hover:bg-[#25D366]/20 transition-colors font-medium border border-[#25D366]/30"
@@ -216,6 +216,27 @@ export default function ContactPage() {
             </div>
           </motion.div>
         </div>
+
+        {/* Official Visiting Card Showcase */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="mt-16 max-w-4xl mx-auto rounded-2xl overflow-hidden border border-(--gold-400)/30 bg-[#0e0e0e] p-6 shadow-2xl shadow-(--gold-400)/10"
+        >
+          <div className="text-center mb-4">
+            <span className="text-xs uppercase tracking-[0.25em] text-(--gold-400) font-semibold">
+              Official Showroom Visiting Card · স্বর্ণালী জুয়েলার্স
+            </span>
+          </div>
+          <div className="rounded-xl overflow-hidden shadow-lg border border-(--gold-400)/20">
+            <img
+              src="/Swornali-Jewellers/images/visiting-card.jpg"
+              alt="Swornali Jewellers Official Visiting Card - Ram Prasad Tarafder, Jashore"
+              className="w-full h-auto object-contain"
+            />
+          </div>
+        </motion.div>
       </div>
     </div>
   );

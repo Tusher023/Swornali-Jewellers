@@ -554,7 +554,7 @@ export default function AdminDashboardPage() {
             📍 মেহেদী মার্কেট, রাজগঞ্জ রোড, যশোর
           </div>
           <div className="text-[11px] text-[#c9a96e] mt-1">
-            📞 01818-341601 / 01990-544288
+            📞 01818-049601 / 01990-544288
           </div>
         </div>
 
