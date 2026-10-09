@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, type Variants } from 'framer-motion';
 import { products, categories, testimonials, formatPrice } from '../lib/products';
+import GorgeousHeroAnimation from '../components/gorgeous-hero-animation';
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -26,17 +27,9 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* 1. HERO SECTION */}
-      <section className="hero relative h-[90vh] flex items-center justify-center overflow-hidden bg-black">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1599643478524-fb66f4568db7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-            alt="Luxury Jewellery"
-            fill
-            className="object-cover object-center opacity-70"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80" />
-        </div>
+      <section className="hero relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-[#050505]">
+        {/* Gorgeous Brand Background Animation */}
+        <GorgeousHeroAnimation />
         
         <motion.div 
           className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20"
@@ -44,20 +37,21 @@ export default function HomePage() {
           animate="visible"
           variants={staggerContainer}
         >
-          <motion.span variants={fadeInUp} className="inline-block text-gold-400 tracking-widest text-sm uppercase mb-6 font-medium">
-            The 2026 Collection
+          <motion.span variants={fadeInUp} className="inline-flex items-center gap-2 text-[#f5d77f] tracking-[0.22em] text-xs md:text-sm uppercase mb-6 font-semibold px-4 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-[#c9a96e]/40 shadow-xl">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#c9a96e] animate-pulse" />
+            The 2026 Collection · স্বর্ণালী জুয়েলার্স
           </motion.span>
-          <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl lg:text-8xl font-display text-white mb-6 leading-[1.1]">
-            Elegance That Lasts <span className="text-gold-500 italic font-light">Forever</span>
+          <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl lg:text-8xl font-display text-white mb-6 leading-[1.1] drop-shadow-[0_6px_30px_rgba(0,0,0,0.95)]">
+            Elegance That Lasts <span className="text-gold-500 italic font-light drop-shadow-[0_0_25px_rgba(201,169,110,0.45)]">Forever</span>
           </motion.h1>
-          <motion.p variants={fadeInUp} className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+          <motion.p variants={fadeInUp} className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)]">
             Discover our handcrafted collections of exquisite gold and diamond pieces, designed to celebrate your most precious moments.
           </motion.p>
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-5">
-            <Link href="/products" className="btn btn-primary btn-lg w-full sm:w-auto px-8 py-4 bg-gold-500 text-black hover:bg-gold-400 transition-colors border-none text-sm tracking-wider font-semibold">
+            <Link href="/products" className="btn btn-primary btn-lg w-full sm:w-auto px-8 py-4 bg-gold-500 text-black hover:bg-gold-400 transition-all duration-300 border-none text-sm tracking-wider font-semibold shadow-[0_4px_20px_rgba(201,169,110,0.35)] hover:shadow-[0_6px_28px_rgba(201,169,110,0.55)]">
               Shop Collection
             </Link>
-            <Link href="/custom-jewelry" className="btn btn-secondary btn-lg w-full sm:w-auto px-8 py-4 bg-transparent border border-white/30 text-white hover:bg-white hover:text-black transition-colors text-sm tracking-wider font-semibold">
+            <Link href="/custom-jewelry" className="btn btn-secondary btn-lg w-full sm:w-auto px-8 py-4 bg-black/40 backdrop-blur-md border border-white/40 text-white hover:bg-white hover:text-black transition-all duration-300 text-sm tracking-wider font-semibold">
               Custom Jewellery
             </Link>
           </motion.div>
