@@ -102,11 +102,11 @@ export function Header() {
               className="h-10 md:h-12 w-auto object-contain drop-shadow-[0_2px_10px_rgba(201,169,110,0.35)] transition-transform duration-300 hover:scale-105"
             />
             <div className="flex flex-col text-left">
-              <span className="font-display tracking-widest text-[#f5f5f5] text-base md:text-lg font-bold leading-tight">
-                স্বর্ণালী
+              <span className="font-display tracking-wide text-[#f5f5f5] text-base md:text-lg font-bold leading-tight">
+                স্বর্ণালী জুয়েলার্স
               </span>
-              <span className="text-[9px] tracking-[0.28em] text-[#c9a96e] font-semibold uppercase leading-none">
-                JEWELLERS
+              <span className="text-[9px] md:text-[10px] tracking-[0.22em] text-[#c9a96e] font-semibold uppercase leading-tight mt-0.5">
+                SWORNALI JEWELLERS
               </span>
             </div>
           </Link>
@@ -511,11 +511,11 @@ export function Footer() {
               className="h-14 w-auto object-contain drop-shadow-[0_2px_12px_rgba(201,169,110,0.4)] transition-transform duration-300 group-hover:scale-105"
             />
             <div className="flex flex-col text-left">
-              <span className="font-display tracking-widest text-[#f5f5f5] text-xl font-bold leading-tight">
-                স্বর্ণালী
+              <span className="font-display tracking-wide text-[#f5f5f5] text-xl font-bold leading-tight">
+                স্বর্ণালী জুয়েলার্স
               </span>
-              <span className="text-[10px] tracking-[0.3em] text-[#c9a96e] font-semibold uppercase">
-                JEWELLERS
+              <span className="text-[10px] tracking-[0.25em] text-[#c9a96e] font-semibold uppercase mt-0.5">
+                SWORNALI JEWELLERS
               </span>
             </div>
           </Link>
