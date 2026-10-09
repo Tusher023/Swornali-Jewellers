@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, type Variants } from 'framer-motion';
 import { products, categories, testimonials, formatPrice } from '../lib/products';
-import { JewelryHero3D } from '../components/jewelry-hero-3d';
+import { LuxuryJewelryVisualizer } from '../components/luxury-jewelry-visualizer';
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -92,16 +92,16 @@ export default function HomePage() {
             {/* Right 3D Animated Interactive Experience */}
             <motion.div
               className="lg:col-span-6 relative flex items-center justify-center"
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="relative w-full max-w-lg lg:max-w-none">
-                {/* 3D Backdrop Glow Orb */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] md:w-[440px] h-[340px] md:h-[440px] bg-gradient-to-tr from-[#c9a96e]/20 via-[#000000]/40 to-[#0e3b2e]/30 rounded-full blur-3xl pointer-events-none" />
+                {/* 3D Luxury Backdrop Glow */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] md:w-[480px] h-[380px] md:h-[480px] bg-gradient-to-tr from-[#c9a96e]/25 via-[#b59a65]/10 to-[#0e3b2e]/20 rounded-full blur-3xl pointer-events-none" />
 
-                {/* 3D Canvas Component */}
-                <JewelryHero3D />
+                {/* Ultra-Luxury 3D Jewelry Visualizer */}
+                <LuxuryJewelryVisualizer />
               </div>
             </motion.div>
           </div>
