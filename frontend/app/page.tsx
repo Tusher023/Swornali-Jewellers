@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion, type Variants } from 'framer-motion';
 import { products, categories, testimonials, formatPrice } from '../lib/products';
 import GivaHeroCarousel from '../components/giva-hero-carousel';
+import { LiveGoldRateSection } from '../components/live-gold-rate';
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -47,6 +48,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* 2.5 LIVE GOLD RATE TODAY (BANGLADESH BAJUS OFFICIAL RATES) */}
+      <LiveGoldRateSection />
 
       {/* 3. CATEGORY SHOWCASE */}
       <section className="section bg-bg-primary py-24">

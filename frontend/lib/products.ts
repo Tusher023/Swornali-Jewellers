@@ -306,13 +306,13 @@ export const faqs = [
   { q: 'Do you ship internationally?', a: 'Currently we ship across Bangladesh with complimentary insured delivery. International shipping to select countries is available — please contact us for rates and timelines.' },
 ];
 
-// Gold & Silver rate per gram (BDT) — Hallmarked 18K/21K/22K & Silver (Swornali Jewellers)
+// Gold & Silver rate per gram (BDT) — BAJUS Official Bangladesh Rates
 export const goldRates: Record<string, number> = {
-  '18K': 8450,
-  '21K': 9850,
-  '22K': 10350,
-  '24K': 11200,
-  'Silver': 190,
+  '18K': 16110, // ~৳1,87,907 per bhori
+  '21K': 18760, // ~৳2,18,817 per bhori
+  '22K': 19640, // ~৳2,29,081 per bhori
+  '24K': 21450, // Pure assay
+  'Silver': 370, // ~৳4,316 per bhori (22K pure silver)
 };
 
 export const formatPrice = (price: number) => `৳${price.toLocaleString('en-BD')}`;

@@ -5,6 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { FormEvent, useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useStore } from './store-provider';
+import { LiveGoldRateModal, LiveGoldRateTickerStrip } from './live-gold-rate';
 
 const PRODUCT_TYPES = [
   { name: 'Rings', bengali: 'আংটি', hasSub: true, href: '/products?category=Rings' },
@@ -65,6 +66,7 @@ export function Header() {
   const [productTypeOpen, setProductTypeOpen] = useState(false);
   const [hoveredSubCategory, setHoveredSubCategory] = useState<string | null>(null);
   const [mobileProductTypeOpen, setMobileProductTypeOpen] = useState(false);
+  const [goldRateModalOpen, setGoldRateModalOpen] = useState(false);
 
   const count = cart.reduce((total, item) => total + item.quantity, 0);
 
@@ -125,6 +127,11 @@ export function Header() {
       <div className="announcement-bar flex items-center justify-center gap-2 text-[11px] sm:text-xs py-2 bg-[#0e0e0e] text-[#c9a96e] border-b border-[#1f1f1f] font-medium tracking-wide">
         <span>✦ Easy 15-Day Return Policy · ১০০% হলমার্ক বিশুদ্ধ স্বর্ণ · সারা বাংলাদেশে ফ্রি হোম ডেলিভারি · যশোর শোরুম: 01818-049601 ✦</span>
       </div>
+
+      {/* ═══════════════════════════════════════
+          LIVE GOLD & SILVER RATE BANNER STRIP (BAJUS BANGLADESH)
+          ═══════════════════════════════════════ */}
+      <LiveGoldRateTickerStrip onOpenModal={() => setGoldRateModalOpen(true)} />
 
       {/* ═══════════════════════════════════════
           HEADER (DARK LUXURY & GOLD)
@@ -358,10 +365,16 @@ export function Header() {
             <Link href="/products?category=Earrings" className="hover:text-[#c9a96e] transition-colors py-1">
               Pure Silver Jewellery
             </Link>
-            <Link href="/about" className="hover:text-[#c9a96e] transition-colors py-1 flex items-center gap-1.5">
+            <button
+              type="button"
+              onClick={() => setGoldRateModalOpen(true)}
+              className="hover:text-[#c9a96e] text-left transition-colors py-1 flex items-center gap-1.5 cursor-pointer"
+            >
               <span>Gold Rate Today</span>
-              <span className="text-[9px] bg-[#c9a96e]/20 text-[#c9a96e] border border-[#c9a96e]/40 px-1.5 py-0.5 rounded font-bold">LIVE</span>
-            </Link>
+              <span className="text-[9px] bg-[#c9a96e]/20 text-[#c9a96e] border border-[#c9a96e]/40 px-1.5 py-0.5 rounded font-bold animate-pulse">
+                LIVE BD
+              </span>
+            </button>
             <Link href="/custom-jewelry" className="hover:text-[#c9a96e] transition-colors py-1">
               Custom Jewellery
             </Link>
@@ -459,6 +472,20 @@ export function Header() {
           {navigation('customJewelry')}
         </Link>
 
+        <button
+          type="button"
+          onClick={() => {
+            setMobileOpen(false);
+            setGoldRateModalOpen(true);
+          }}
+          className="text-left py-2 text-[#c9a96e] font-semibold flex items-center justify-between w-full"
+        >
+          <span>Gold Rate Today (লাইভ রেট)</span>
+          <span className="text-[10px] bg-[#c9a96e]/20 text-[#c9a96e] border border-[#c9a96e]/40 px-2 py-0.5 rounded font-bold">
+            LIVE BD
+          </span>
+        </button>
+
         <Link href="/about">
           {navigation('about')}
         </Link>
@@ -496,6 +523,14 @@ export function Header() {
           </Link>
         </div>
       </nav>
+
+      {/* ═══════════════════════════════════════
+          LIVE GOLD RATE MODAL (BAJUS BANGLADESH)
+          ═══════════════════════════════════════ */}
+      <LiveGoldRateModal
+        isOpen={goldRateModalOpen}
+        onClose={() => setGoldRateModalOpen(false)}
+      />
     </>
   );
 }

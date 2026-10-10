@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { LiveGoldRateSection } from '../../components/live-gold-rate';
 
 export default function AboutPage() {
   return (
@@ -123,6 +124,11 @@ export default function AboutPage() {
               <div className="text-(--text-secondary) text-sm uppercase tracking-wider">Certified</div>
             </div>
           </div>
+        </section>
+
+        {/* Live Gold Rate Today (BAJUS Bangladesh) */}
+        <section className="mt-16">
+          <LiveGoldRateSection />
         </section>
 
       </div>
