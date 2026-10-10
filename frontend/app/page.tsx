@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, type Variants } from 'framer-motion';
 import { products, categories, testimonials, formatPrice } from '../lib/products';
-import GorgeousHeroAnimation from '../components/gorgeous-hero-animation';
+import GivaHeroCarousel from '../components/giva-hero-carousel';
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -25,38 +25,9 @@ export default function HomePage() {
   const featuredProducts = products.slice(0, 8);
 
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* 1. HERO SECTION */}
-      <section className="hero relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-[#050505]">
-        {/* Gorgeous Brand Background Animation */}
-        <GorgeousHeroAnimation />
-        
-        <motion.div 
-          className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20"
-          initial="hidden"
-          animate="visible"
-          variants={staggerContainer}
-        >
-          <motion.span variants={fadeInUp} className="inline-flex items-center gap-2 text-[#f5d77f] tracking-[0.22em] text-xs md:text-sm uppercase mb-6 font-semibold px-4 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-[#c9a96e]/40 shadow-xl">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#c9a96e] animate-pulse" />
-            The 2026 Collection · স্বর্ণালী জুয়েলার্স
-          </motion.span>
-          <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl lg:text-8xl font-display text-white mb-6 leading-[1.1] drop-shadow-[0_6px_30px_rgba(0,0,0,0.95)]">
-            Elegance That Lasts <span className="text-gold-500 italic font-light drop-shadow-[0_0_25px_rgba(201,169,110,0.45)]">Forever</span>
-          </motion.h1>
-          <motion.p variants={fadeInUp} className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)]">
-            Discover our handcrafted collections of exquisite gold and diamond pieces, designed to celebrate your most precious moments.
-          </motion.p>
-          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-5">
-            <Link href="/products" className="btn btn-primary btn-lg w-full sm:w-auto px-8 py-4 bg-gold-500 text-black hover:bg-gold-400 transition-all duration-300 border-none text-sm tracking-wider font-semibold shadow-[0_4px_20px_rgba(201,169,110,0.35)] hover:shadow-[0_6px_28px_rgba(201,169,110,0.55)]">
-              Shop Collection
-            </Link>
-            <Link href="/custom-jewelry" className="btn btn-secondary btn-lg w-full sm:w-auto px-8 py-4 bg-black/40 backdrop-blur-md border border-white/40 text-white hover:bg-white hover:text-black transition-all duration-300 text-sm tracking-wider font-semibold">
-              Custom Jewellery
-            </Link>
-          </motion.div>
-        </motion.div>
-      </section>
+    <div className="flex flex-col min-h-screen bg-[#faf8f5]">
+      {/* 1. GIVA-STYLE HERO CAROUSEL BANNER & METAL QUICK-SWITCHER */}
+      <GivaHeroCarousel />
 
       {/* 2. TRUST BAR */}
       <section className="trust-bar bg-bg-secondary py-10 border-b border-white/5 relative z-10 -mt-2">
@@ -138,7 +109,7 @@ export default function HomePage() {
                       src={product.image}
                       alt={product.name}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100 mix-blend-lighten"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     {product.badge && (
                       <div className="absolute top-4 left-4 bg-gold-500 text-black text-[10px] font-bold px-3 py-1.5 uppercase tracking-widest z-10 rounded-sm">

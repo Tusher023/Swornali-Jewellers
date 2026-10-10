@@ -75,307 +75,193 @@ export function Header() {
   return (
     <>
       {/* ═══════════════════════════════════════
-          ANNOUNCEMENT BAR
+          ANNOUNCEMENT BAR (GIVA STYLE)
           ═══════════════════════════════════════ */}
 
-      <div className="announcement-bar">
-        ✦ {common('deliveryAnnouncement')} ✦
+      <div className="announcement-bar flex items-center justify-center gap-2 text-[11px] sm:text-xs py-2 bg-[#fbf4ea] text-[#5c3e1e] border-b border-[#f0e6d6] font-medium tracking-wide">
+        <span>Easy 15-Day Return Policy · ১০০% হলমার্ক বিশুদ্ধ স্বর্ণ · সারা বাংলাদেশে ফ্রি হোম ডেলিভারি · যশোর শোরুম: 01818-049601</span>
       </div>
 
       {/* ═══════════════════════════════════════
-          HEADER
+          HEADER (GIVA STYLE)
           ═══════════════════════════════════════ */}
 
       <header
-        className={`site-header ${
-          scrolled ? 'scrolled' : ''
+        className={`site-header bg-white transition-all duration-200 ${
+          scrolled ? 'scrolled shadow-md' : 'border-b border-[#ede6dc]'
         }`}
       >
-        <div className="header-inner">
+        {/* Tier 1: Brand Logo, Location Selector, Wide Search Bar, Action Buttons */}
+        <div className="max-w-[1440px] mx-auto px-4 lg:px-8 py-3 flex items-center justify-between gap-3 md:gap-6">
 
-          {/* ───────── Brand ───────── */}
-
-          <Link href="/" className="brand-logo flex items-center gap-3">
+          {/* ───────── Brand Logo ───────── */}
+          <Link href="/" className="brand-logo flex items-center gap-2.5 shrink-0">
             <img
               src="/Swornali-Jewellers/images/logo.png"
               alt="স্বর্ণালী জুয়েলার্স - Swornali Jewellers"
-              className="h-10 md:h-12 w-auto object-contain drop-shadow-[0_2px_10px_rgba(201,169,110,0.35)] transition-transform duration-300 hover:scale-105"
+              className="h-10 md:h-12 w-auto object-contain drop-shadow-sm transition-transform duration-300 hover:scale-105"
             />
             <div className="flex flex-col text-left">
-              <span className="font-display tracking-wide text-[#f5f5f5] text-base md:text-lg font-bold leading-tight">
+              <span className="font-display tracking-wide text-[#1c1917] text-base md:text-lg font-bold leading-tight">
                 স্বর্ণালী জুয়েলার্স
               </span>
-              <span className="text-[9px] md:text-[10px] tracking-[0.22em] text-[#c9a96e] font-semibold uppercase leading-tight mt-0.5">
+              <span className="text-[9px] md:text-[10px] tracking-[0.22em] text-[#a08550] font-semibold uppercase leading-tight mt-0.5">
                 SWORNALI JEWELLERS
               </span>
             </div>
           </Link>
 
-          {/* ═════════════════════════════════════
-              DESKTOP NAVIGATION
-              ═════════════════════════════════════ */}
-
-          <nav
-            className="nav-links"
-            aria-label={navigation('mainNavigation')}
+          {/* ───────── GIVA Location Selector (Desktop) ───────── */}
+          <Link
+            href="/about"
+            className="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-[#ede6dc] hover:border-[#a08550] transition-colors bg-[#faf8f5] shrink-0"
+            title="শো-রুম: মেহেদী মার্কেট, রাজগঞ্জ রোড, যশোর"
           >
-            <li>
-              <Link
-                href="/products"
-                className={
-                  pathname === '/products'
-                    ? 'text-gold'
-                    : ''
-                }
-              >
-                {navigation('products')}
-              </Link>
-            </li>
+            <span className="text-[#a08550] text-sm">📍</span>
+            <div className="text-left text-[11px] leading-tight">
+              <span className="block text-[#777] font-medium">Where to Deliver?</span>
+              <span className="block font-bold text-[#222]">যশোর / সারা বাংলাদেশ ⌵</span>
+            </div>
+          </Link>
 
-            <li>
-              <Link href="/products?category=Rings">
-                {navigation('rings')}
-              </Link>
-            </li>
-
-            <li>
-              <Link href="/products?category=Necklaces">
-                {navigation('necklaces')}
-              </Link>
-            </li>
-
-            <li>
-              <Link href="/products?category=Earrings">
-                {navigation('earrings')}
-              </Link>
-            </li>
-
-            <li>
-              <Link href="/products?category=Bracelets">
-                {navigation('bracelets')}
-              </Link>
-            </li>
-
-            <li>
-              <Link href="/custom-jewelry">
-                {navigation('customJewelry')}
-              </Link>
-            </li>
-
-            <li>
-              <Link href="/about">
-                {navigation('about')}
-              </Link>
-            </li>
-          </nav>
-
-          {/* ═════════════════════════════════════
-              HEADER ACTIONS
-              ═════════════════════════════════════ */}
-
-          <div className="header-actions">
-
-            {/* Search */}
-
+          {/* ───────── GIVA Prominent Search Bar (Center) ───────── */}
+          <form onSubmit={handleSearch} className="flex-1 max-w-xl relative hidden md:block">
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder='Search "Bracelets", "Rings", "গলার হার", "বালা"...'
+              className="w-full pl-5 pr-12 py-2.5 rounded-full border border-[#dcd6cc] bg-[#ffffff] text-sm text-[#222] placeholder-[#888] focus:outline-none focus:border-[#84253e] focus:ring-1 focus:ring-[#84253e] transition-all shadow-sm"
+            />
             <button
-              type="button"
-              onClick={() =>
-                setSearchOpen((value) => !value)
-              }
-              aria-label={common('search')}
-              style={{
-                position: 'relative',
-              }}
+              type="submit"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-[#666] hover:text-[#84253e] transition-colors"
+              aria-label="Search"
             >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              >
-                <circle
-                  cx="11"
-                  cy="11"
-                  r="8"
-                />
-
-                <line
-                  x1="21"
-                  y1="21"
-                  x2="16.65"
-                  y2="16.65"
-                />
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
               </svg>
             </button>
+          </form>
 
-            {/* Wishlist */}
-
-            <Link
-              href="/wishlist"
-              aria-label={navigation('wishlist')}
-              style={{
-                position: 'relative',
-              }}
-            >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              >
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          {/* ───────── GIVA Action Items: STORES, ACCOUNT, WISHLIST, CART ───────── */}
+          <div className="flex items-center gap-4 sm:gap-6 shrink-0">
+            {/* STORES / SHOWROOM */}
+            <Link href="/about" className="flex flex-col items-center text-[#444] hover:text-[#84253e] transition-colors group">
+              <svg className="w-5 h-5 text-[#555] group-hover:text-[#84253e]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
-
-              {wishlist.length > 0 && (
-                <span className="badge-count">
-                  {wishlist.length}
-                </span>
-              )}
+              <span className="text-[10px] font-semibold tracking-wider uppercase mt-1 hidden sm:block">STORES</span>
             </Link>
 
-            {/* Shopping Bag */}
-
-            <Link
-              href="/cart"
-              aria-label={navigation('cart')}
-              style={{
-                position: 'relative',
-              }}
-            >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              >
-                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-
-                <line
-                  x1="3"
-                  y1="6"
-                  x2="21"
-                  y2="6"
-                />
-
-                <path d="M16 10a4 4 0 0 1-8 0" />
+            {/* ACCOUNT */}
+            <Link href={user ? '/account' : '/auth/login'} className="flex flex-col items-center text-[#444] hover:text-[#84253e] transition-colors group">
+              <svg className="w-5 h-5 text-[#555] group-hover:text-[#84253e]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
-
-              {count > 0 && (
-                <span className="badge-count">
-                  {count}
-                </span>
-              )}
+              <span className="text-[10px] font-semibold tracking-wider uppercase mt-1 hidden sm:block">ACCOUNT</span>
             </Link>
 
-            {/* Account */}
-
-            <Link
-              href={
-                user
-                  ? '/account'
-                  : '/auth/login'
-              }
-              className="hidden lg:flex"
-              aria-label={navigation('account')}
-            >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              >
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-
-                <circle
-                  cx="12"
-                  cy="7"
-                  r="4"
-                />
-              </svg>
+            {/* WISHLIST */}
+            <Link href="/wishlist" className="flex flex-col items-center text-[#444] hover:text-[#84253e] transition-colors relative group">
+              <div className="relative">
+                <svg className="w-5 h-5 text-[#555] group-hover:text-[#84253e]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+                {wishlist.length > 0 && (
+                  <span className="absolute -top-1.5 -right-2 bg-[#84253e] text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                    {wishlist.length}
+                  </span>
+                )}
+              </div>
+              <span className="text-[10px] font-semibold tracking-wider uppercase mt-1 hidden sm:block">WISHLIST</span>
             </Link>
 
-            {/* Mobile menu */}
+            {/* CART */}
+            <Link href="/cart" className="flex flex-col items-center text-[#444] hover:text-[#84253e] transition-colors relative group">
+              <div className="relative">
+                <svg className="w-5 h-5 text-[#555] group-hover:text-[#84253e]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                </svg>
+                {count > 0 && (
+                  <span className="absolute -top-1.5 -right-2 bg-[#84253e] text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                    {count}
+                  </span>
+                )}
+              </div>
+              <span className="text-[10px] font-semibold tracking-wider uppercase mt-1 hidden sm:block">CART</span>
+            </Link>
 
+            {/* Mobile Hamburger Toggle */}
             <button
               type="button"
-              className={`mobile-menu-btn ${
-                mobileOpen ? 'open' : ''
-              }`}
-              onClick={() =>
-                setMobileOpen((value) => !value)
-              }
+              onClick={() => setMobileOpen((value) => !value)}
+              className="lg:hidden p-1.5 text-[#333]"
               aria-label={common('menu')}
               aria-expanded={mobileOpen}
             >
-              <span />
-              <span />
-              <span />
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
             </button>
           </div>
         </div>
 
-        {/* ═════════════════════════════════════
-            SEARCH OVERLAY
-            ═════════════════════════════════════ */}
+        {/* Mobile Search Input Row */}
+        <div className="md:hidden px-4 pb-2.5">
+          <form onSubmit={handleSearch} className="relative w-full">
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder='Search "Bracelets", "Rings", "গলার হার"...'
+              className="w-full pl-4 pr-10 py-2 rounded-full border border-[#dcd6cc] bg-white text-xs text-[#222]"
+            />
+            <button type="submit" className="absolute right-3 top-1/2 -translate-y-1/2 text-[#666]">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+          </form>
+        </div>
 
-        {searchOpen && (
-          <div
-            className="animate-fade-in-down"
-            style={{
-              position: 'absolute',
-              top: '100%',
-              left: 0,
-              right: 0,
-              background: 'var(--bg-secondary)',
-              borderBottom:
-                '1px solid var(--border-subtle)',
-              padding: '16px 24px',
-              zIndex: 99,
-            }}
-          >
-            <form
-              onSubmit={handleSearch}
-              style={{
-                display: 'flex',
-                gap: '12px',
-                maxWidth: '600px',
-                margin: '0 auto',
-              }}
-            >
-              <input
-                className="form-input"
-                value={query}
-                onChange={(event) =>
-                  setQuery(event.target.value)
-                }
-                placeholder={common('searchPlaceholder')}
-                autoFocus
-                style={{
-                  flex: 1,
-                }}
-              />
-
-              <button
-                type="submit"
-                className="btn btn-primary btn-sm"
-              >
-                {common('search')}
-              </button>
-            </form>
-          </div>
-        )}
+        {/* Tier 2: Category Navigation Row (GIVA style) */}
+        <div className="hidden lg:block border-t border-[#f0ece6] bg-[#ffffff]">
+          <nav className="max-w-[1440px] mx-auto px-8 flex items-center justify-between text-xs font-semibold text-[#444] tracking-wide py-2.5 overflow-x-auto scrollbar-none whitespace-nowrap gap-5">
+            <Link href="/products" className="hover:text-[#84253e] transition-colors py-1 flex items-center gap-1">
+              Product Type <span className="text-[10px] text-[#888]">⌵</span>
+            </Link>
+            <Link href="/products?category=Necklaces" className="hover:text-[#84253e] transition-colors py-1">
+              Shop for Women
+            </Link>
+            <Link href="/products?category=Rings" className="hover:text-[#84253e] transition-colors py-1">
+              Shop for Men
+            </Link>
+            <Link href="/products?collection=Royal+Bridal" className="hover:text-[#84253e] transition-colors py-1">
+              Bridal Collection
+            </Link>
+            <Link href="/products" className="hover:text-[#84253e] transition-colors py-1 flex items-center gap-1">
+              Shop by Price <span className="text-[10px] text-[#888]">⌵</span>
+            </Link>
+            <Link href="/products?category=Bracelets" className="hover:text-[#84253e] transition-colors py-1">
+              22K Guinea Gold
+            </Link>
+            <Link href="/products?category=Earrings" className="hover:text-[#84253e] transition-colors py-1">
+              21K Hallmark Gold
+            </Link>
+            <Link href="/products?category=Earrings" className="hover:text-[#84253e] transition-colors py-1">
+              Pure Silver Jewellery
+            </Link>
+            <Link href="/about" className="hover:text-[#84253e] transition-colors py-1 flex items-center gap-1.5">
+              <span>Gold Rate Today</span>
+              <span className="text-[9px] bg-[#fff0f3] text-[#84253e] px-1.5 py-0.5 rounded font-bold">LIVE</span>
+            </Link>
+            <Link href="/custom-jewelry" className="hover:text-[#84253e] transition-colors py-1">
+              Custom Jewellery
+            </Link>
+          </nav>
+        </div>
       </header>
 
       {/* ═══════════════════════════════════════
@@ -511,10 +397,10 @@ export function Footer() {
               className="h-14 w-auto object-contain drop-shadow-[0_2px_12px_rgba(201,169,110,0.4)] transition-transform duration-300 group-hover:scale-105"
             />
             <div className="flex flex-col text-left">
-              <span className="font-display tracking-wide text-[#f5f5f5] text-xl font-bold leading-tight">
+              <span className="font-display tracking-wide text-[#1c1917] text-xl font-bold leading-tight">
                 স্বর্ণালী জুয়েলার্স
               </span>
-              <span className="text-[10px] tracking-[0.25em] text-[#c9a96e] font-semibold uppercase mt-0.5">
+              <span className="text-[10px] tracking-[0.25em] text-[#a08550] font-semibold uppercase mt-0.5">
                 SWORNALI JEWELLERS
               </span>
             </div>
