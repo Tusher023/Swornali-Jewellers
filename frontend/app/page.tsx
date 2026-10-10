@@ -30,25 +30,6 @@ export default function HomePage() {
       {/* 1. GIVA-STYLE HERO CAROUSEL BANNER & METAL QUICK-SWITCHER */}
       <GivaHeroCarousel />
 
-      {/* 2. TRUST BAR */}
-      <section className="trust-bar bg-bg-secondary py-10 border-b border-white/5 relative z-10 -mt-2">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x divide-white/5">
-            {[
-              { icon: '💎', text: 'Certified Authentic' },
-              { icon: '🚚', text: 'Free Insured Delivery' },
-              { icon: '🛡️', text: 'Lifetime Care' },
-              { icon: '↩️', text: '14-Day Returns' }
-            ].map((item, i) => (
-              <div key={i} className="flex flex-col items-center gap-3 px-4">
-                <span className="text-2xl opacity-90">{item.icon}</span>
-                <span className="text-xs font-semibold text-text-secondary tracking-widest uppercase">{item.text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* 2.5 LIVE GOLD RATE TODAY (BANGLADESH BAJUS OFFICIAL RATES) */}
       <LiveGoldRateSection />
 
