@@ -6,6 +6,45 @@ import { FormEvent, useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useStore } from './store-provider';
 
+const PRODUCT_TYPES = [
+  { name: 'Rings', bengali: 'আংটি', hasSub: true, href: '/products?category=Rings' },
+  { name: 'Pendants', bengali: 'লকেট / পেন্ডেন্ট', hasSub: true, href: '/products?category=Pendants' },
+  { name: 'Bracelets', bengali: 'বালা ও ব্রেসলেট', hasSub: true, href: '/products?category=Bracelets' },
+  { name: 'Earrings', bengali: 'দুল ও ঝুমকা', hasSub: true, href: '/products?category=Earrings' },
+  { name: 'Anklets', bengali: 'পায়েল ও নূপুর', hasSub: false, href: '/products?category=Anklets' },
+  { name: 'Chains', bengali: 'সোনার চেইন', hasSub: false, href: '/products?category=Chains' },
+  { name: 'Sets', bengali: 'নেকলেস ও ব্রাইডাল সেট', hasSub: false, href: '/products?category=Sets' },
+  { name: 'Mangalsutras', bengali: 'মঙ্গলসূত্র', hasSub: false, href: '/products?category=Mangalsutras' },
+  { name: 'Nose Pins', bengali: 'নাকফুল ও নোলক', hasSub: false, href: '/products?category=Nose+Pins' },
+  { name: 'Toe Rings', bengali: 'তোড়া / আঙ্গুলের আংটি', hasSub: false, href: '/products?category=Toe+Rings' },
+];
+
+const SUB_ITEMS: Record<string, { label: string; href: string }[]> = {
+  Rings: [
+    { label: 'All Rings (সকল আংটি)', href: '/products?category=Rings' },
+    { label: 'Solitaire Rings (হীরাখচিত আংটি)', href: '/products?category=Rings' },
+    { label: '22K Guinea Gold Rings (২২K সোনা)', href: '/products?category=Rings' },
+    { label: 'Couple Bands (যুগল আংটি)', href: '/products?category=Rings' },
+  ],
+  Pendants: [
+    { label: 'All Pendants (সকল পেন্ডেন্ট)', href: '/products?category=Pendants' },
+    { label: 'Gold Pendants (সোনার লকেট)', href: '/products?category=Pendants' },
+    { label: 'Diamond Pendants (হীরার লকেট)', href: '/products?category=Pendants' },
+  ],
+  Bracelets: [
+    { label: 'All Bracelets (বালা ও ব্রেসলেট)', href: '/products?category=Bracelets' },
+    { label: 'Peacock Bangles (ময়ূর বালা)', href: '/products?category=Bracelets' },
+    { label: 'Traditional Bala (ঐতিহ্যবাহী স্বর্ণবালা)', href: '/products?category=Bracelets' },
+    { label: 'Chain Bracelets (চেইন ব্রেসলেট)', href: '/products?category=Bracelets' },
+  ],
+  Earrings: [
+    { label: 'All Earrings (সকল দুল)', href: '/products?category=Earrings' },
+    { label: 'Royal Jhumkas (ঐতিহ্যবাহী ঝুমকো)', href: '/products?category=Earrings' },
+    { label: 'Studs & Tops (টপ দুল)', href: '/products?category=Earrings' },
+    { label: 'Drop Earrings (ঝুলন্ত দুল)', href: '/products?category=Earrings' },
+  ],
+};
+
 /* ═══════════════════════════════════════════
    HEADER
    ═══════════════════════════════════════════ */
@@ -23,6 +62,9 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [productTypeOpen, setProductTypeOpen] = useState(false);
+  const [hoveredSubCategory, setHoveredSubCategory] = useState<string | null>(null);
+  const [mobileProductTypeOpen, setMobileProductTypeOpen] = useState(false);
 
   const count = cart.reduce((total, item) => total + item.quantity, 0);
 
@@ -51,6 +93,8 @@ export function Header() {
   useEffect(() => {
     setMobileOpen(false);
     setSearchOpen(false);
+    setProductTypeOpen(false);
+    setHoveredSubCategory(null);
   }, [pathname]);
 
   /* ───────── Search ───────── */
@@ -228,10 +272,70 @@ export function Header() {
 
         {/* Tier 2: Category Navigation Row (GIVA style) */}
         <div className="hidden lg:block border-t border-[#f0ece6] bg-[#ffffff]">
-          <nav className="max-w-[1440px] mx-auto px-8 flex items-center justify-between text-xs font-semibold text-[#444] tracking-wide py-2.5 overflow-x-auto scrollbar-none whitespace-nowrap gap-5">
-            <Link href="/products" className="hover:text-[#84253e] transition-colors py-1 flex items-center gap-1">
-              Product Type <span className="text-[10px] text-[#888]">⌵</span>
-            </Link>
+          <nav className="max-w-[1440px] mx-auto px-8 flex items-center justify-between text-xs font-semibold text-[#444] tracking-wide py-2.5 whitespace-nowrap gap-5">
+            {/* Product Type with GIVA-style Dropdown Menu */}
+            <div
+              className="relative"
+              onMouseEnter={() => setProductTypeOpen(true)}
+              onMouseLeave={() => {
+                setProductTypeOpen(false);
+                setHoveredSubCategory(null);
+              }}
+            >
+              <button
+                type="button"
+                onClick={() => setProductTypeOpen(!productTypeOpen)}
+                className="hover:text-[#84253e] transition-colors py-1 flex items-center gap-1 font-semibold uppercase tracking-wide bg-transparent border-none cursor-pointer text-[#444] text-xs"
+              >
+                Product Type <span className={`text-[10px] text-[#888] transition-transform ${productTypeOpen ? 'rotate-180 text-[#84253e]' : ''}`}>⌵</span>
+              </button>
+
+              {/* Product Type Dropdown Menu (Matches user screenshot) */}
+              {productTypeOpen && (
+                <div className="absolute top-full left-0 mt-1.5 bg-white border border-[#ede6dc] rounded-xl shadow-2xl py-2 z-50 flex animate-in fade-in slide-in-from-top-1 duration-150">
+                  {/* Primary 10 Categories List */}
+                  <div className="w-[200px] flex flex-col py-1">
+                    {PRODUCT_TYPES.map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        onMouseEnter={() => (item.hasSub ? setHoveredSubCategory(item.name) : setHoveredSubCategory(null))}
+                        onClick={() => setProductTypeOpen(false)}
+                        className={`flex items-center justify-between px-5 py-2.5 text-[13px] font-medium transition-colors ${
+                          hoveredSubCategory === item.name
+                            ? 'bg-[#fbf4ea] text-[#84253e] font-semibold'
+                            : 'text-[#333] hover:bg-[#faf8f5] hover:text-[#84253e]'
+                        }`}
+                      >
+                        <span>{item.name}</span>
+                        {item.hasSub && (
+                          <span className="text-[13px] text-[#999] ml-4 font-normal">›</span>
+                        )}
+                      </Link>
+                    ))}
+                  </div>
+
+                  {/* Sub-menu panel for items with > (Rings, Pendants, Bracelets, Earrings) */}
+                  {hoveredSubCategory && SUB_ITEMS[hoveredSubCategory] && (
+                    <div className="w-[230px] border-l border-[#ede6dc] bg-[#fdfbf9] py-2 flex flex-col">
+                      <div className="px-5 py-1.5 text-[11px] font-bold uppercase tracking-wider text-[#a08550] border-b border-[#f0ece6] mb-1">
+                        {hoveredSubCategory} Collection
+                      </div>
+                      {SUB_ITEMS[hoveredSubCategory].map((sub, i) => (
+                        <Link
+                          key={i}
+                          href={sub.href}
+                          onClick={() => setProductTypeOpen(false)}
+                          className="px-5 py-2 text-[12px] text-[#555] hover:text-[#84253e] hover:bg-white font-medium transition-colors"
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
             <Link href="/products?category=Necklaces" className="hover:text-[#84253e] transition-colors py-1">
               Shop for Women
             </Link>
@@ -301,6 +405,34 @@ export function Header() {
         >
           ✕
         </button>
+
+        {/* Mobile Product Type Expandable Accordion */}
+        <div className="py-1 border-b border-[var(--border-subtle)]">
+          <button
+            type="button"
+            onClick={() => setMobileProductTypeOpen(!mobileProductTypeOpen)}
+            className="w-full flex items-center justify-between py-2 text-left font-serif text-[15px] font-semibold text-[var(--text-primary)] bg-transparent border-none cursor-pointer"
+          >
+            <span>Product Type (সকল গহনা)</span>
+            <span className={`text-xs transition-transform ${mobileProductTypeOpen ? 'rotate-180 text-[#84253e]' : ''}`}>⌵</span>
+          </button>
+
+          {mobileProductTypeOpen && (
+            <div className="pl-3 py-2 flex flex-col gap-1 bg-[#faf8f5] rounded-lg my-1 border border-[#eee7dd]">
+              {PRODUCT_TYPES.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="py-1.5 px-3 text-xs font-semibold text-[#444] hover:text-[#84253e] flex items-center justify-between rounded hover:bg-white transition-colors"
+                >
+                  <span>{item.name}</span>
+                  <span className="text-[10px] text-[#888]">{item.bengali}</span>
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
 
         <Link href="/products">
           {navigation('products')}

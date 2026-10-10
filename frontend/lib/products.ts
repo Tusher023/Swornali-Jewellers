@@ -1,4 +1,15 @@
-export type Category = 'Rings' | 'Necklaces' | 'Earrings' | 'Bracelets';
+export type Category =
+  | 'Rings'
+  | 'Necklaces'
+  | 'Earrings'
+  | 'Bracelets'
+  | 'Pendants'
+  | 'Anklets'
+  | 'Chains'
+  | 'Sets'
+  | 'Mangalsutras'
+  | 'Nose Pins'
+  | 'Toe Rings';
 
 export type Product = {
   id: string;
@@ -36,9 +47,16 @@ export type Testimonial = {
 
 export const categories: { name: Category; image: string; count: number }[] = [
   { name: 'Rings', image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80', count: 5 },
+  { name: 'Pendants', image: 'https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=800&q=80', count: 3 },
+  { name: 'Bracelets', image: 'https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80', count: 4 },
+  { name: 'Earrings', image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80', count: 5 },
+  { name: 'Anklets', image: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=800&q=80', count: 2 },
+  { name: 'Chains', image: 'https://images.unsplash.com/photo-1515562141589-67f0d569b6e5?auto=format&fit=crop&w=800&q=80', count: 3 },
+  { name: 'Sets', image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80', count: 4 },
+  { name: 'Mangalsutras', image: 'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=800&q=80', count: 2 },
+  { name: 'Nose Pins', image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80', count: 3 },
+  { name: 'Toe Rings', image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80', count: 2 },
   { name: 'Necklaces', image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80', count: 4 },
-  { name: 'Earrings', image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80', count: 4 },
-  { name: 'Bracelets', image: 'https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80', count: 3 },
 ];
 
 export const products: Product[] = [
