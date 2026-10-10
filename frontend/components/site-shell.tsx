@@ -119,20 +119,20 @@ export function Header() {
   return (
     <>
       {/* ═══════════════════════════════════════
-          ANNOUNCEMENT BAR (GIVA STYLE)
+          ANNOUNCEMENT BAR (GOLD & OBSIDIAN)
           ═══════════════════════════════════════ */}
 
-      <div className="announcement-bar flex items-center justify-center gap-2 text-[11px] sm:text-xs py-2 bg-[#fbf4ea] text-[#5c3e1e] border-b border-[#f0e6d6] font-medium tracking-wide">
-        <span>Easy 15-Day Return Policy · ১০০% হলমার্ক বিশুদ্ধ স্বর্ণ · সারা বাংলাদেশে ফ্রি হোম ডেলিভারি · যশোর শোরুম: 01818-049601</span>
+      <div className="announcement-bar flex items-center justify-center gap-2 text-[11px] sm:text-xs py-2 bg-[#0e0e0e] text-[#c9a96e] border-b border-[#1f1f1f] font-medium tracking-wide">
+        <span>✦ Easy 15-Day Return Policy · ১০০% হলমার্ক বিশুদ্ধ স্বর্ণ · সারা বাংলাদেশে ফ্রি হোম ডেলিভারি · যশোর শোরুম: 01818-049601 ✦</span>
       </div>
 
       {/* ═══════════════════════════════════════
-          HEADER (GIVA STYLE)
+          HEADER (DARK LUXURY & GOLD)
           ═══════════════════════════════════════ */}
 
       <header
-        className={`site-header bg-white transition-all duration-200 ${
-          scrolled ? 'scrolled shadow-md' : 'border-b border-[#ede6dc]'
+        className={`site-header bg-[#0a0a0a] transition-all duration-200 ${
+          scrolled ? 'scrolled shadow-[0_4px_25px_rgba(0,0,0,0.8)] border-b border-[#c9a96e]/30' : 'border-b border-[#1f1f1f]'
         }`}
       >
         {/* Tier 1: Brand Logo, Location Selector, Wide Search Bar, Action Buttons */}
@@ -143,43 +143,43 @@ export function Header() {
             <img
               src="/Swornali-Jewellers/images/logo.png"
               alt="স্বর্ণালী জুয়েলার্স - Swornali Jewellers"
-              className="h-10 md:h-12 w-auto object-contain drop-shadow-sm transition-transform duration-300 hover:scale-105"
+              className="h-10 md:h-12 w-auto object-contain drop-shadow-[0_2px_12px_rgba(201,169,110,0.4)] transition-transform duration-300 hover:scale-105"
             />
             <div className="flex flex-col text-left">
-              <span className="font-display tracking-wide text-[#1c1917] text-base md:text-lg font-bold leading-tight">
+              <span className="font-display tracking-wide text-white text-base md:text-lg font-bold leading-tight">
                 স্বর্ণালী জুয়েলার্স
               </span>
-              <span className="text-[9px] md:text-[10px] tracking-[0.22em] text-[#a08550] font-semibold uppercase leading-tight mt-0.5">
+              <span className="text-[9px] md:text-[10px] tracking-[0.22em] text-[#c9a96e] font-semibold uppercase leading-tight mt-0.5">
                 SWORNALI JEWELLERS
               </span>
             </div>
           </Link>
 
-          {/* ───────── GIVA Location Selector (Desktop) ───────── */}
+          {/* ───────── Location Selector (Desktop) ───────── */}
           <Link
             href="/about"
-            className="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-[#ede6dc] hover:border-[#a08550] transition-colors bg-[#faf8f5] shrink-0"
+            className="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-[#242424] hover:border-[#c9a96e] transition-colors bg-[#121212] shrink-0"
             title="শো-রুম: মেহেদী মার্কেট, রাজগঞ্জ রোড, যশোর"
           >
-            <span className="text-[#a08550] text-sm">📍</span>
+            <span className="text-[#c9a96e] text-sm">📍</span>
             <div className="text-left text-[11px] leading-tight">
-              <span className="block text-[#777] font-medium">Where to Deliver?</span>
-              <span className="block font-bold text-[#222]">যশোর / সারা বাংলাদেশ ⌵</span>
+              <span className="block text-[#888] font-medium">Where to Deliver?</span>
+              <span className="block font-bold text-[#f0f0f0]">যশোর / সারা বাংলাদেশ ⌵</span>
             </div>
           </Link>
 
-          {/* ───────── GIVA Prominent Search Bar (Center) ───────── */}
+          {/* ───────── Prominent Search Bar (Center) ───────── */}
           <form onSubmit={handleSearch} className="flex-1 max-w-xl relative hidden md:block">
             <input
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder='Search "Bracelets", "Rings", "গলার হার", "বালা"...'
-              className="w-full pl-5 pr-12 py-2.5 rounded-full border border-[#dcd6cc] bg-[#ffffff] text-sm text-[#222] placeholder-[#888] focus:outline-none focus:border-[#84253e] focus:ring-1 focus:ring-[#84253e] transition-all shadow-sm"
+              className="w-full pl-5 pr-12 py-2.5 rounded-full border border-[#262626] bg-[#141414] text-sm text-[#f0f0f0] placeholder-[#777] focus:outline-none focus:border-[#c9a96e] focus:ring-1 focus:ring-[#c9a96e] transition-all shadow-inner"
             />
             <button
               type="submit"
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-[#666] hover:text-[#84253e] transition-colors"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-[#c9a96e] hover:text-[#f5d77f] transition-colors"
               aria-label="Search"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
@@ -189,59 +189,59 @@ export function Header() {
             </button>
           </form>
 
-          {/* ───────── GIVA Action Items: STORES, ACCOUNT, WISHLIST, CART ───────── */}
+          {/* ───────── Action Items: STORES, ACCOUNT, WISHLIST, CART ───────── */}
           <div className="flex items-center gap-4 sm:gap-6 shrink-0">
             {/* STORES / SHOWROOM */}
-            <Link href="/about" className="flex flex-col items-center text-[#444] hover:text-[#84253e] transition-colors group">
-              <svg className="w-5 h-5 text-[#555] group-hover:text-[#84253e]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+            <Link href="/about" className="flex flex-col items-center text-[#c9a96e] hover:text-[#f5d77f] transition-colors group">
+              <svg className="w-5 h-5 text-[#c9a96e] group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
-              <span className="text-[10px] font-semibold tracking-wider uppercase mt-1 hidden sm:block">STORES</span>
+              <span className="text-[10px] font-semibold tracking-wider text-[#a0a0a0] group-hover:text-[#c9a96e] uppercase mt-1 hidden sm:block">STORES</span>
             </Link>
 
             {/* ACCOUNT */}
-            <Link href={user ? '/account' : '/auth/login'} className="flex flex-col items-center text-[#444] hover:text-[#84253e] transition-colors group">
-              <svg className="w-5 h-5 text-[#555] group-hover:text-[#84253e]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+            <Link href={user ? '/account' : '/auth/login'} className="flex flex-col items-center text-[#c9a96e] hover:text-[#f5d77f] transition-colors group">
+              <svg className="w-5 h-5 text-[#c9a96e] group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
-              <span className="text-[10px] font-semibold tracking-wider uppercase mt-1 hidden sm:block">ACCOUNT</span>
+              <span className="text-[10px] font-semibold tracking-wider text-[#a0a0a0] group-hover:text-[#c9a96e] uppercase mt-1 hidden sm:block">ACCOUNT</span>
             </Link>
 
             {/* WISHLIST */}
-            <Link href="/wishlist" className="flex flex-col items-center text-[#444] hover:text-[#84253e] transition-colors relative group">
+            <Link href="/wishlist" className="flex flex-col items-center text-[#c9a96e] hover:text-[#f5d77f] transition-colors relative group">
               <div className="relative">
-                <svg className="w-5 h-5 text-[#555] group-hover:text-[#84253e]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-[#c9a96e] group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
                 {wishlist.length > 0 && (
-                  <span className="absolute -top-1.5 -right-2 bg-[#84253e] text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                  <span className="absolute -top-1.5 -right-2 bg-[#c9a96e] text-black text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
                     {wishlist.length}
                   </span>
                 )}
               </div>
-              <span className="text-[10px] font-semibold tracking-wider uppercase mt-1 hidden sm:block">WISHLIST</span>
+              <span className="text-[10px] font-semibold tracking-wider text-[#a0a0a0] group-hover:text-[#c9a96e] uppercase mt-1 hidden sm:block">WISHLIST</span>
             </Link>
 
             {/* CART */}
-            <Link href="/cart" className="flex flex-col items-center text-[#444] hover:text-[#84253e] transition-colors relative group">
+            <Link href="/cart" className="flex flex-col items-center text-[#c9a96e] hover:text-[#f5d77f] transition-colors relative group">
               <div className="relative">
-                <svg className="w-5 h-5 text-[#555] group-hover:text-[#84253e]" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-[#c9a96e] group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
                 {count > 0 && (
-                  <span className="absolute -top-1.5 -right-2 bg-[#84253e] text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                  <span className="absolute -top-1.5 -right-2 bg-[#c9a96e] text-black text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
                     {count}
                   </span>
                 )}
               </div>
-              <span className="text-[10px] font-semibold tracking-wider uppercase mt-1 hidden sm:block">CART</span>
+              <span className="text-[10px] font-semibold tracking-wider text-[#a0a0a0] group-hover:text-[#c9a96e] uppercase mt-1 hidden sm:block">CART</span>
             </Link>
 
             {/* Mobile Hamburger Toggle */}
             <button
               type="button"
               onClick={() => setMobileOpen((value) => !value)}
-              className="lg:hidden p-1.5 text-[#333]"
+              className="lg:hidden p-1.5 text-[#c9a96e]"
               aria-label={common('menu')}
               aria-expanded={mobileOpen}
             >
@@ -260,9 +260,9 @@ export function Header() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder='Search "Bracelets", "Rings", "গলার হার"...'
-              className="w-full pl-4 pr-10 py-2 rounded-full border border-[#dcd6cc] bg-white text-xs text-[#222]"
+              className="w-full pl-4 pr-10 py-2 rounded-full border border-[#262626] bg-[#141414] text-xs text-white placeholder-[#777]"
             />
-            <button type="submit" className="absolute right-3 top-1/2 -translate-y-1/2 text-[#666]">
+            <button type="submit" className="absolute right-3 top-1/2 -translate-y-1/2 text-[#c9a96e]">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
               </svg>
@@ -270,10 +270,10 @@ export function Header() {
           </form>
         </div>
 
-        {/* Tier 2: Category Navigation Row (GIVA style) */}
-        <div className="hidden lg:block border-t border-[#f0ece6] bg-[#ffffff]">
-          <nav className="max-w-[1440px] mx-auto px-8 flex items-center justify-between text-xs font-semibold text-[#444] tracking-wide py-2.5 whitespace-nowrap gap-5">
-            {/* Product Type with GIVA-style Dropdown Menu */}
+        {/* Tier 2: Category Navigation Row (Obsidian & Gold) */}
+        <div className="hidden lg:block border-t border-[#1a1a1a] bg-[#0e0e0e]">
+          <nav className="max-w-[1440px] mx-auto px-8 flex items-center justify-between text-xs font-semibold text-[#ccc] tracking-wide py-2.5 whitespace-nowrap gap-5">
+            {/* Product Type with Dropdown Menu */}
             <div
               className="relative"
               onMouseEnter={() => setProductTypeOpen(true)}
@@ -285,14 +285,14 @@ export function Header() {
               <button
                 type="button"
                 onClick={() => setProductTypeOpen(!productTypeOpen)}
-                className="hover:text-[#84253e] transition-colors py-1 flex items-center gap-1 font-semibold uppercase tracking-wide bg-transparent border-none cursor-pointer text-[#444] text-xs"
+                className="hover:text-[#c9a96e] transition-colors py-1 flex items-center gap-1 font-semibold uppercase tracking-wide bg-transparent border-none cursor-pointer text-[#ddd] text-xs"
               >
-                Product Type <span className={`text-[10px] text-[#888] transition-transform ${productTypeOpen ? 'rotate-180 text-[#84253e]' : ''}`}>⌵</span>
+                Product Type <span className={`text-[10px] text-[#c9a96e] transition-transform ${productTypeOpen ? 'rotate-180' : ''}`}>⌵</span>
               </button>
 
               {/* Product Type Dropdown Menu (Matches user screenshot) */}
               {productTypeOpen && (
-                <div className="absolute top-full left-0 mt-1.5 bg-white border border-[#ede6dc] rounded-xl shadow-2xl py-2 z-50 flex animate-in fade-in slide-in-from-top-1 duration-150">
+                <div className="absolute top-full left-0 mt-1.5 bg-[#141414] border border-[#2a2a2a] rounded-xl shadow-[0_12px_40px_rgba(0,0,0,0.85)] py-2 z-50 flex animate-in fade-in slide-in-from-top-1 duration-150">
                   {/* Primary 10 Categories List */}
                   <div className="w-[200px] flex flex-col py-1">
                     {PRODUCT_TYPES.map((item) => (
@@ -303,13 +303,13 @@ export function Header() {
                         onClick={() => setProductTypeOpen(false)}
                         className={`flex items-center justify-between px-5 py-2.5 text-[13px] font-medium transition-colors ${
                           hoveredSubCategory === item.name
-                            ? 'bg-[#fbf4ea] text-[#84253e] font-semibold'
-                            : 'text-[#333] hover:bg-[#faf8f5] hover:text-[#84253e]'
+                            ? 'bg-[#1f1f1f] text-[#c9a96e] font-semibold'
+                            : 'text-[#e0e0e0] hover:bg-[#1a1a1a] hover:text-[#c9a96e]'
                         }`}
                       >
                         <span>{item.name}</span>
                         {item.hasSub && (
-                          <span className="text-[13px] text-[#999] ml-4 font-normal">›</span>
+                          <span className="text-[13px] text-[#888] ml-4 font-normal">›</span>
                         )}
                       </Link>
                     ))}
@@ -317,8 +317,8 @@ export function Header() {
 
                   {/* Sub-menu panel for items with > (Rings, Pendants, Bracelets, Earrings) */}
                   {hoveredSubCategory && SUB_ITEMS[hoveredSubCategory] && (
-                    <div className="w-[230px] border-l border-[#ede6dc] bg-[#fdfbf9] py-2 flex flex-col">
-                      <div className="px-5 py-1.5 text-[11px] font-bold uppercase tracking-wider text-[#a08550] border-b border-[#f0ece6] mb-1">
+                    <div className="w-[230px] border-l border-[#262626] bg-[#181818] py-2 flex flex-col">
+                      <div className="px-5 py-1.5 text-[11px] font-bold uppercase tracking-wider text-[#c9a96e] border-b border-[#262626] mb-1">
                         {hoveredSubCategory} Collection
                       </div>
                       {SUB_ITEMS[hoveredSubCategory].map((sub, i) => (
@@ -326,7 +326,7 @@ export function Header() {
                           key={i}
                           href={sub.href}
                           onClick={() => setProductTypeOpen(false)}
-                          className="px-5 py-2 text-[12px] text-[#555] hover:text-[#84253e] hover:bg-white font-medium transition-colors"
+                          className="px-5 py-2 text-[12px] text-[#bbb] hover:text-[#c9a96e] hover:bg-[#202020] font-medium transition-colors"
                         >
                           {sub.label}
                         </Link>
@@ -336,32 +336,33 @@ export function Header() {
                 </div>
               )}
             </div>
-            <Link href="/products?category=Necklaces" className="hover:text-[#84253e] transition-colors py-1">
+
+            <Link href="/products?category=Necklaces" className="hover:text-[#c9a96e] transition-colors py-1">
               Shop for Women
             </Link>
-            <Link href="/products?category=Rings" className="hover:text-[#84253e] transition-colors py-1">
+            <Link href="/products?category=Rings" className="hover:text-[#c9a96e] transition-colors py-1">
               Shop for Men
             </Link>
-            <Link href="/products?collection=Royal+Bridal" className="hover:text-[#84253e] transition-colors py-1">
+            <Link href="/products?collection=Royal+Bridal" className="hover:text-[#c9a96e] transition-colors py-1">
               Bridal Collection
             </Link>
-            <Link href="/products" className="hover:text-[#84253e] transition-colors py-1 flex items-center gap-1">
+            <Link href="/products" className="hover:text-[#c9a96e] transition-colors py-1 flex items-center gap-1">
               Shop by Price <span className="text-[10px] text-[#888]">⌵</span>
             </Link>
-            <Link href="/products?category=Bracelets" className="hover:text-[#84253e] transition-colors py-1">
+            <Link href="/products?category=Bracelets" className="hover:text-[#c9a96e] transition-colors py-1">
               22K Guinea Gold
             </Link>
-            <Link href="/products?category=Earrings" className="hover:text-[#84253e] transition-colors py-1">
+            <Link href="/products?category=Earrings" className="hover:text-[#c9a96e] transition-colors py-1">
               21K Hallmark Gold
             </Link>
-            <Link href="/products?category=Earrings" className="hover:text-[#84253e] transition-colors py-1">
+            <Link href="/products?category=Earrings" className="hover:text-[#c9a96e] transition-colors py-1">
               Pure Silver Jewellery
             </Link>
-            <Link href="/about" className="hover:text-[#84253e] transition-colors py-1 flex items-center gap-1.5">
+            <Link href="/about" className="hover:text-[#c9a96e] transition-colors py-1 flex items-center gap-1.5">
               <span>Gold Rate Today</span>
-              <span className="text-[9px] bg-[#fff0f3] text-[#84253e] px-1.5 py-0.5 rounded font-bold">LIVE</span>
+              <span className="text-[9px] bg-[#c9a96e]/20 text-[#c9a96e] border border-[#c9a96e]/40 px-1.5 py-0.5 rounded font-bold">LIVE</span>
             </Link>
-            <Link href="/custom-jewelry" className="hover:text-[#84253e] transition-colors py-1">
+            <Link href="/custom-jewelry" className="hover:text-[#c9a96e] transition-colors py-1">
               Custom Jewellery
             </Link>
           </nav>
@@ -529,10 +530,10 @@ export function Footer() {
               className="h-14 w-auto object-contain drop-shadow-[0_2px_12px_rgba(201,169,110,0.4)] transition-transform duration-300 group-hover:scale-105"
             />
             <div className="flex flex-col text-left">
-              <span className="font-display tracking-wide text-[#1c1917] text-xl font-bold leading-tight">
+              <span className="font-display tracking-wide text-white text-xl font-bold leading-tight">
                 স্বর্ণালী জুয়েলার্স
               </span>
-              <span className="text-[10px] tracking-[0.25em] text-[#a08550] font-semibold uppercase mt-0.5">
+              <span className="text-[10px] tracking-[0.25em] text-[#c9a96e] font-semibold uppercase mt-0.5">
                 SWORNALI JEWELLERS
               </span>
             </div>

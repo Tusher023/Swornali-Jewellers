@@ -25,7 +25,7 @@ export default function HomePage() {
   const featuredProducts = products.slice(0, 8);
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#faf8f5]">
+    <div className="flex flex-col min-h-screen bg-[#0a0a0a]">
       {/* 1. GIVA-STYLE HERO CAROUSEL BANNER & METAL QUICK-SWITCHER */}
       <GivaHeroCarousel />
 
