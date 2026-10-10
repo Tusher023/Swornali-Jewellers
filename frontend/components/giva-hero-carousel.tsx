@@ -212,7 +212,7 @@ export default function GivaHeroCarousel() {
                   </div>
                 </motion.div>
 
-                {/* ───────── CENTER: Jewellery Ornament Display ───────── */}
+                {/* ───────── CENTER: Jewellery Ornament Display (Floating Animation) ───────── */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.88, y: 15 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -220,9 +220,39 @@ export default function GivaHeroCarousel() {
                   className="md:col-span-4 flex items-center justify-center relative py-2"
                 >
                   {/* Subtle radial gold spotlight glow */}
-                  <div className="absolute w-56 h-56 sm:w-72 sm:h-72 rounded-full bg-[#c9a96e]/15 blur-3xl -z-10" />
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.15, 1],
+                      opacity: [0.15, 0.28, 0.15],
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: 'easeInOut',
+                    }}
+                    className="absolute w-56 h-56 sm:w-72 sm:h-72 rounded-full bg-[#c9a96e]/20 blur-3xl -z-10"
+                  />
 
-                  <div className="relative w-52 h-52 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 flex items-center justify-center">
+                  {/* Rotating subtle gold ring behind ornament */}
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 50, repeat: Infinity, ease: 'linear' }}
+                    className="absolute w-60 h-60 sm:w-72 sm:h-72 rounded-full border border-[rgba(201,169,110,0.18)] border-dashed pointer-events-none -z-10"
+                  />
+
+                  {/* Floating Ornament Container */}
+                  <motion.div
+                    animate={{
+                      y: [0, -12, 0, 8, 0],
+                      rotate: [0, 1.5, 0, -1.5, 0],
+                    }}
+                    transition={{
+                      duration: 5.5,
+                      repeat: Infinity,
+                      ease: 'easeInOut',
+                    }}
+                    className="relative w-52 h-52 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 flex items-center justify-center"
+                  >
                     <img
                       src={slide.image}
                       alt={slide.alt}
@@ -232,21 +262,32 @@ export default function GivaHeroCarousel() {
                           img.src = slide.imageFallback;
                         }
                       }}
-                      className="w-full h-full object-contain filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.9)] drop-shadow-[0_0_30px_rgba(201,169,110,0.25)] transition-transform duration-700 hover:scale-105"
+                      className="w-full h-full object-contain filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.9)] drop-shadow-[0_0_30px_rgba(201,169,110,0.35)] transition-transform duration-700 hover:scale-105"
                     />
 
-                    {/* Sparkle star flair */}
-                    <div
-                      className="absolute -top-2 right-4 text-xl sm:text-2xl animate-pulse pointer-events-none text-[#c9a96e]"
+                    {/* Sparkle star flairs */}
+                    <motion.div
+                      animate={{
+                        scale: [0.8, 1.25, 0.8],
+                        opacity: [0.4, 1, 0.4],
+                        rotate: [0, 45, 0],
+                      }}
+                      transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
+                      className="absolute -top-2 right-4 text-xl sm:text-2xl pointer-events-none text-[#c9a96e]"
                     >
                       ✦
-                    </div>
-                    <div
-                      className="absolute bottom-4 left-2 text-lg animate-pulse delay-300 pointer-events-none text-[#f5d77f]"
+                    </motion.div>
+                    <motion.div
+                      animate={{
+                        scale: [1.2, 0.7, 1.2],
+                        opacity: [0.8, 0.3, 0.8],
+                      }}
+                      transition={{ duration: 2.8, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
+                      className="absolute bottom-4 left-2 text-lg pointer-events-none text-[#f5d77f]"
                     >
                       ✧
-                    </div>
-                  </div>
+                    </motion.div>
+                  </motion.div>
                 </motion.div>
 
                 {/* ───────── RIGHT: Offer Box & Coupon Code ───────── */}
