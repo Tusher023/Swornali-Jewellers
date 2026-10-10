@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useStore } from '../../../components/store-provider';
 import { Eye, EyeOff } from 'lucide-react';
+import { AuthJewelleryShowcase } from '../../../components/auth-jewellery-showcase';
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -53,46 +54,7 @@ export default function RegisterPage() {
   return (
     <div className="auth-split min-h-screen flex">
       {/* Left side - Luxury Animated Floating Jewellery Showcase */}
-      <div className="hidden lg:flex lg:w-1/2 relative bg-[#0a0a0a] items-center justify-center overflow-hidden border-r border-[#1f1f1f]">
-        {/* Radial gold ambient glow */}
-        <div className="absolute w-[450px] h-[450px] rounded-full bg-[radial-gradient(circle,rgba(201,169,110,0.18)_0%,transparent_70%)] blur-3xl pointer-events-none" />
-
-        {/* Concentric rotating filigree rings */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-[360px] h-[360px] rounded-full border border-[rgba(201,169,110,0.2)] border-dashed animate-[spin_60s_linear_infinite]" />
-          <div className="w-[260px] h-[260px] rounded-full border border-[rgba(201,169,110,0.25)] animate-[spin_40s_linear_infinite_reverse]" />
-        </div>
-
-        {/* Floating Royal Ring Showcase */}
-        <div className="relative z-10 flex flex-col items-center text-center p-8">
-          <div className="relative w-64 h-64 sm:w-72 sm:h-72 mb-6 animate-[bounce_6s_ease-in-out_infinite]">
-            <img
-              src="/images/royal-ring.jpg"
-              alt="Swornali Jewellers 22K Royal Solitaire Ring"
-              onError={(e) => {
-                const img = e.currentTarget;
-                if (!img.src.includes('Swornali-Jewellers')) {
-                  img.src = '/Swornali-Jewellers/images/royal-ring.jpg';
-                }
-              }}
-              className="w-full h-full object-cover rounded-full border-2 border-[rgba(201,169,110,0.4)] shadow-[0_15px_45px_rgba(0,0,0,0.9),0_0_30px_rgba(201,169,110,0.3)] filter brightness-105"
-            />
-            {/* Sparkles */}
-            <span className="absolute -top-3 -right-2 text-2xl text-[#c9a96e] animate-pulse">✦</span>
-            <span className="absolute -bottom-2 -left-2 text-xl text-[#f5d77f] animate-pulse">✧</span>
-          </div>
-
-          <div className="inline-block px-3 py-1 rounded-full bg-[#141414] border border-[#c9a96e]/30 text-xs text-[#c9a96e] tracking-widest font-semibold uppercase mb-2">
-            স্বর্ণালী জুয়েলার্স · ১০০% হলমার্ক বিশুদ্ধতা
-          </div>
-          <h2 className="text-2xl font-display font-bold text-white tracking-wide">
-            Create VIP Account
-          </h2>
-          <p className="text-xs text-[#888] max-w-xs mt-1">
-            Join the Swornali Prestige Circle for exclusive heirloom releases, member discounts, and priority bespoke craft orders.
-          </p>
-        </div>
-      </div>
+      <AuthJewelleryShowcase pieceType="ring" />
 
       {/* Right side - Form */}
       <div className="w-full lg:w-1/2 flex items-center justify-center p-8 bg-[var(--bg-primary)]">
