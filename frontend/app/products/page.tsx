@@ -9,6 +9,8 @@ import { motion } from 'framer-motion'
 import { useStore } from '../../components/store-provider'
 import { products, categories, searchProducts, sortProducts, formatPrice, materials, stones, type Product } from '../../lib/products'
 
+import { CollectionHeroBanner } from '../../components/collection-hero-banner'
+
 function ProductsContent() {
   const searchParams = useSearchParams()
   const q = searchParams.get('q') || ''
@@ -61,10 +63,12 @@ function ProductsContent() {
   return (
     <div className="section min-h-screen">
       <div className="container mx-auto px-4">
-        <div className="page-header text-center mb-12">
-          <h1 className="section-title text-4xl mb-4 font-display text-[var(--text-primary)]">Our Collection</h1>
-          <p className="section-subtitle text-[var(--text-secondary)]">Discover our exquisite range of fine jewelry</p>
-        </div>
+        <CollectionHeroBanner
+          title="Our Collection"
+          subtitle="Discover our exquisite range of fine jewelry"
+          bengaliSubtitle="স্বর্ণালী জুয়েলার্স · এক্সক্লুসিভ কালেকশন"
+          totalProducts={filteredProducts.length}
+        />
 
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar */}
